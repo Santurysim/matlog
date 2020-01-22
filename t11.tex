@@ -1,0 +1,129 @@
+\section{Равносильность формул логики высказываний, связь с тождественной истинностью. Важнейшие равносильности. Свойство замены подформулы
+на равносильную}.
+\definition{Формулы A и B называются \textbf{равносильными (эквивалентными)}, обозначение {$\boldsymbol{A}\equiv \boldsymbol{B}$}, если при каждой оценке пропозициональных переменных значение A совпадает со значением B.\\ Другими словами, $\varphi_{A}=\varphi_{B} $} \label{formula}
+\begin{example}
+  ${P}\to{Q}  \equiv \neg Q\to{\neg P} $
+\end{example}
+ 
+\begin{center}
+ \textbf{Связь с тождественной истинностью}
+\end{center}
+
+{
+
+}
+\textit{(i) Отношение $\equiv$ рефлексивно,симметрично и
+транзитивно. То есть является отношением эквивалентности.}
+{
+
+}
+\textit{(ii) Формулы А и B равносильны тогда и только тогда, когда формула ${A}\leftrightarrow{B}$ является тавтологией.}{
+
+}
+\textit{(iii)Формула A тавтология тогда и только тогда, когда
+${A}\equiv \top $.}
+
+\begin{center}
+ \textbf{Основные равносильности}
+{
+
+}
+$A \wedge B  \equiv B \wedge A $ \\
+$A \wedge(B \wedge C)  \equiv(A \wedge B) \wedge C $ \\
+$A \wedge A  \equiv A $ \\
+$A \wedge(B \vee C)  \equiv(A \wedge B) \vee(A \wedge C)$ \\
+$A \vee(A \wedge B)  \equiv A$ \\
+$ \neg(A \wedge B)  \equiv \neg A \vee \neg B$ \\
+$\neg \neg A  \equiv  A $ \\
+{---------------------------------------------}
+
+$A \vee B  \equiv B \vee A $\\
+$A \vee(B \vee C)  \equiv(A \vee B) \vee C $ \\
+$A \vee A  \equiv A $  \\
+$A \vee(B \wedge C)  \equiv(A \vee B) \wedge(A \vee C) $ \\
+$A \wedge(A \vee B)  \equiv A $ \\
+$\neg(A \vee B)  \equiv \neg A \wedge \neg B $ \\
+$A \rightarrow B  \equiv \neg A \vee B $
+
+\end{center}
+ 
+
+
+
+
+
+
+\begin{center}
+ \textbf{Замена подформулы на равносильную}
+\end{center}
+{ Если C и D — формулы, а P — пропозициональная
+переменная, то через C[P/D] обозначим результат подстановки формулы D вместо P в формулу C.
+Формальное определение даётся с помощью индукции по построению
+формулы C.
+}
+\begin{center}
+{
+
+}
+$P[P / D] \rightleftharpoons D$ {
+
+}
+$Q[P / D] \rightleftharpoons Q,$ если Q— переменная, отличная от P {
+
+}
+$(\neg A)[P / D] \rightleftharpoons \neg(A[P / D]) $ {
+
+}
+$(A \wedge B)[P / D] \rightleftharpoons(A[P / D] \wedge B[P / D])$ {
+
+}
+$(A \vee B)[P / D] \rightleftharpoons(A[P / D] \vee B[P / D])$ {
+
+}
+$(A \rightarrow B)[P / D] \rightleftharpoons(A[P / D] \rightarrow B[P / D])${
+
+}
+
+\end{center}
+
+\begin{example}
+Пусть $C=\left(P_{1} \rightarrow P_{2}\right) \rightarrow P_{2} $ и $D=P_{3} \rightarrow P_{2}$
+{
+
+}
+$C\left[P_{2} / D\right]=\left(P_{1} \rightarrow\left(P_{3} \rightarrow P_{2}\right)\right) \rightarrow\left(P_{3} \rightarrow P_{2}\right)  $
+
+\end{example}
+
+
+\begin{theorem}[О подставновке]
+Если A -- тавтология, B -- произвольная формула, а P -- пропозициональная переменная, то A[P/B] -- тавтология.
+\end{theorem}
+\begin{proof}
+Рассмотрим произвольную оценку g. Обозначим через g' оценку, полученную из g присвоением переменной P значения
+g(B). Индукцией по построению C можно доказать, что
+g(C[P/B])=g'(C)  для любой формулы C. Положим C=A. Так как формула A истинна при оценке g', то формула A[P/B] истинна при оценке g .
+\end{proof}
+
+\begin{theorem}
+Пусть A,B,C -- формулы, а P -- пропозициональная
+переменная. Если ${A}\equiv{B}$ , то $A[P/C] \equiv B[P/C]$.
+\end{theorem}
+\begin{proof}
+Пусть $ {A}\equiv{B} $ . В силу $(ii)$ ,  ${A}\leftrightarrow{B}$  - тавтология. По теореме о подстановке, ${A}\leftrightarrow{B}[P/C]$ - тавтология.
+Из определения, что $(A \rightarrow B)[P / D] \rightleftharpoons(A[P / D] \rightarrow B[P / D])$  следует, что $(A \leftrightarrow B)[P / C] $ совпадает с 
+$(A[P / C] \leftrightarrow B[P / C])$. В силу, (ii) получаем, что $A[P/C] \equiv B[P/C]$.
+\end{proof}
+
+
+\begin{theorem}[Теорема о замене подформулы на эквивалентную]
+ Пусть A,B,C формулы, а P -- пропозициональная переменная. Если ${A}\equiv{B}$, то $ { C[P/A]} \equiv  {C[P/B]} $.
+
+\end{theorem}
+\begin{proof}
+Теорема доказывается индукцией по построению формулы C(c использованием предыдущей теоремы).
+\end{proof}
+
+\begin{example}
+Формулы A и B выполнимы, а A[P1/B] нет.  $A=\neg P_{1}$ , $B=P_{2} \vee \neg P_{2}$
+\end{example}

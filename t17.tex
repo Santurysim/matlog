@@ -1,12 +1,12 @@
-\section{Гомомрфизмы и изоморфизмы моделей. Теорема о сохранении истинностного значения формулы при изоморфизме.
+\section{Гомоморфизмы и изоморфизмы моделей. Теорема о сохранении истинностного значения формулы при изоморфизме.
 Автоморфизмы моделей, метод доказательства невыразимости с помощью автоморфизмов. Описание автоморфизмов моделей
-$(\mathbb Z;\leqslant)$,$(\mathbb R^2;=,B)$ и $(\mathbb R^2;=,B,\cong)$ и примеры невыразимых предикатов в этих
+$(\mathbb Z;\leqslant)$, $(\mathbb R^2;=,B)$ и $(\mathbb R^2;=,B,\cong)$ и примеры невыразимых предикатов в этих
 моделях}
 \begin{definition}
-	Пусть $M$ и $M'$ - две модели сигнатуры $\Sigma$. \textbf{Гомоморфизмом} моделей $M$ и $M'$ называется
+	Пусть $M$ и $M'$ -- две модели сигнатуры $\Sigma$. \textbf{Гомоморфизмом} моделей $M$ и $M'$ называется
 	отображение $\varphi\colon M\to M'$, такое, что сохраняются все предикаты, функции и константы $\Sigma$:
 	$$
-		P_M(x_1,\ldots,x_n) \leftrightarrow P_{M'}(\varphi(x_1),\ldots,\varphi(x_n)),\quad\forall P\in
+		P_M(x_1,\ldots,x_n) \rightarrow P_{M'}(\varphi(x_1),\ldots,\varphi(x_n)),\quad\forall P\in
 		\mathrm{Pred}_\Sigma
 	$$
 	$$
@@ -18,14 +18,48 @@ $(\mathbb Z;\leqslant)$,$(\mathbb R^2;=,B)$ и $(\mathbb R^2;=,B,\cong)$ и пр
 \end{definition}
 \begin{definition}
 	\textbf{Изоморфизмом} моделей $M$ и $M'$ называется гомоморфизм $\varphi$, для которого существует обратный
-	гомоморфизм $\psi\colon M\to M'$, такой, что $\psi\circ\varphi =\varphi\circ\psi =\mathrm{id}_M$, где
-	$\mathrm{id}_M$ - тождественный гомоморфизм на $M$.
+	гомоморфизм $\psi\colon M'\to M$, такой, что $\psi\circ\varphi=\mathrm{id}_M$ и $\varphi\circ\psi =
+	\mathrm{id}_{M'}$, где
+	$\mathrm{id}_M$ -- тождественный гомоморфизм на $M$.
 	Две модели \textbf{изоморфны}, если существует изоморфизм этих моделей.
 \end{definition}
+
+\begin{theorem}
+Если $\varphi: M \rightarrow M^{\prime}$ -- изоморфизм, то для любой формулы $A\left(a_{1}, \ldots, a_{n}\right)$ и
+	любых $c_{1}, \ldots, c_{n} \in M$
+
+$$M \vDash A\left[c_{1}, \ldots, c_{n}\right] \Longleftrightarrow M^{\prime} \vDash
+	A\left[\varphi\left(c_{1}\right), \ldots, \varphi\left(c_{n}\right)\right].$$
+\end{theorem}
+
+\begin{proof}
+Индукция по построению $A$.
+\end{proof}
+
+\subsection{Доказательство невыразимости с помощью автоморфизмов.}
+
 \begin{definition}
 	\textbf{Автоморфизмом} модели называется изоморфизм модели на себя.
 \end{definition}
-\begin{theorem}
 
-\end{theorem}
+
+Поскольку все определимые предикаты и функции сохраняются при автоморфизмах модели, для доказательства
+невыразимости достаточно построить автоморфизм, не сохраняющий ту или иную функцию или предикат.
+
+\begin{example}
+Автоморфизмы в модели $(\mathbb{Z}, \leqslant)$ есть сдвиги на $n \in \mathbb{Z}$. В этой модели не выразима
+	функция $+$. Отображение $\varphi: x \rightarrow x+1$ есть автоморфизм $(\mathbb{Z}, \leqslant)$, не
+	сохраняющий $+$.
+\end{example}
+
+\begin{example}
+Автоморфизмами модели $\left(\mathbb{R}^{2} ;=, B \right)$ являются все взаимно однозначные аффинные преобразования
+	плоскости и только они. $\cong$ не выражается в модели, т.к. отношение не сохраняется при растяжении вдоль
+	одной из осей.
+\end{example}
+
+\begin{example}
+ Автоморфизмы модели $\left(\mathbb{R}^{2} ;=, B, \cong\right)$ суть все преобразования плоскости, являющиеся
+	композицией гомотетии и движения. Не выражается $=$, т.к. не сохраняется при гомотетии.
+\end{example}
 % vim: colorcolumn=120 textwidth=115

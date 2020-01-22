@@ -1,0 +1,90 @@
+\section{Равносильность формул языка первого порядка, важнейшие равносильности. Переименование связанных переменных. Приведение формулы языка первого порядка к предварённой форм}
+\begin{definition}
+    Формулы $A$ и $B$ сигнатуры $\Sigma$ \textbf{равносильны} (обозначение $A\equiv B$), если для любой модели $(M,\Sigma)$ и оценки $f$ на $M$
+    $$M \vDash f(A) \Longleftrightarrow M \vDash f(B).$$
+\end{definition}
+Пусть список $b_1 \dots b_n$ содержит все свободные переменные $A$,$B$.
+\begin{proposition}
+    $A\equiv B$, если и только если в любой модели $M$ формулы $A$ и $B$ определяют один и тот же предикат, то есть если $A_M=B_M$ (для данного набора переменных).
+\end{proposition}
+\begin{proposition}
+1) Отношение $\equiv$ рефлексивно,симметрично и транзитивно.\\
+2) $A\equiv B$, если и только если формула $A \leftrightarrow B$ общезначима.\\
+3) Формула $A$ общезначима тогда и только тогда, когда $A \equiv$\textup{T}.
+\end{proposition}
+Перечислим основные равносильности с кванторами
+\begin{lemma}[замена связанной переменной]
+    Если $x,y \in BdVar$ не входят в формулу $A$, то $\forall \:x A[a / x] \equiv \forall y A[a / y]$ u $\exists x A[a / x] \equiv \exists y A[a / y] $
+\end{lemma}
+\begin{proof}
+    Для квантора существования рассуждение аналогично.\\
+    $\begin{aligned}
+    M \vDash \forall x A[a / x] & \Longleftrightarrow M \vDash A[a / c] \text{для всех} c \in M\\
+    & \Longleftrightarrow M \vDash \forall y A[a / y]
+    \end{aligned}$
+\end{proof}
+\begin{lemma}
+    Если $X\in BdVar$ не входит в формулы $A,B$то \\
+   $(\forall x A[a / x] \vee B) \equiv \forall x(A[a / x] \vee B)$
+\end{lemma}
+\begin{proof}
+     Прежде всего заметим, что правая часть эквивалентности, так же как и левая часть, является формулой. В самом деле, выберем $a'\in FrVar$, не входящую в $A,B$.Тогда $B[a'/x]=B,A[a/x]=A[a/a'][a'/x]$ и тем самым $\forall \:(A[a/x]\lor B)$ совпадает с  $\forall \:(A[a/a']\lor B)[a'/x]$ Получаем
+     \begin{center}
+         $\begin{aligned}
+    M \vDash \forall x(A[a / x] \vee B) & \Longleftrightarrow M \vDash(A[a / c] \vee B) \ \text{для всех} \ c \in M \\
+    & \Longleftrightarrow(M \vDash B \ \text{или для всех} \ c \in M \ M \vDash A[a / c]) \\
+    & \Longleftrightarrow(M \vDash B \ \text{или} \ M \vDash \forall x \  A[a / x]) \\
+    & \Longleftrightarrow M \vDash (\forall x \  A[a / x] \vee B)
+    \end{aligned}$
+     \end{center}
+     Аналогично обосновываются остальные равносильности, входящие в следующую таблицу (где предполагается, что переменные $x, \ y$ не входят в формулы $A$, $B$).\\
+$$
+\begin{array}{|ccc|cсc| }
+\hline \forall x A[a / x] & {\equiv} & {\forall y A[a / y]} & {\exists x A[a / x]} & {\equiv} & {\exists y A[a / y]} \\
+{(\forall x A[a / x] \vee B)} & {\equiv} & {\forall x(A[a / x] \vee B)} & {(\exists x A[a / x] \vee B)} & {\equiv} & {\exists x(A[a / x] \vee B)} \\
+{(\forall x A[a / x] \wedge B)} & {\equiv} & {\forall x(A[a / x] \wedge B)} & {(\exists x A[a / x] \wedge B)} & {\equiv} & {\exists x(A[a / x] \wedge B)} \\
+{\neg \forall x A[a / x]} & {\equiv} & {\exists x \neg A[a / x]} & {\neg \exists x A[a / x]} & {\equiv} & {\forall x \neg A[a / x]} \\
+\hline
+\end{array}
+$$
+\end{proof}
+\begin{definition}
+    Обогатим язык логики первого порядка пропозициональной переменной $P$. Можно считать $P$ нульместным предикатным символом. Распостраним на расширенный язык все синтаксические понятия, включая понятие формулы ($P$ считается атомарной формулой). Запись $C[P/A]$ означает результат замены всех вхождений $P$ в формулу $C$ на $A$.Заметим, что $C[P/A]$ всегда является формулой. Для этого достаточно, чтобы связанные переменные $A$ не входили в $C$.
+\end{definition}
+\begin{lemma}
+    $C[P/A]$ -- формула, если и только если любое вхождение P в формулу C не находится в области действия квантора по переменной $x\in BdVar$, входящей в A.
+\end{lemma}
+\begin{proof}
+     Необходимость этого условия очевидна. Достаточность доказывается простой индукцией по построению формулы $C$.
+\end{proof}
+\begin{definition}
+    Говорим, что разрешена подстановка формулы $A$ вместо $P$ в $C$, если выполнено условие предыдущей леммы.
+\end{definition}
+\begin{lemma}
+    1) Если $A\equiv B$,то $\neg A \equiv \neg B$ Если $A_1\equiv B_1$ и $A_2\equiv B_2$,то $A_1\wedge A_2\equiv B_1 \wedge B_2$,$A_1\lor A_2\equiv B_1 \lor B_2$,$A_1\rightarrow A_2\equiv B_1 \rightarrow B_2$\\
+    2)Если $A\equiv B$ и $x \in BdVar$ не входит в $A,B$, то $\forall x A[a / x] \equiv \forall x B[a / x]$ и $\exists x A[a / x] \equiv \exists x B[a / x]$
+\end{lemma}
+\begin{theorem}
+    \textbf{(замена подформулы на эквивалентную} Если $A \equiv B$ и разрешена подстановка формул $A,B$ вместо $P$ в $C$ то $C[P/A]\equiv C[P/B]\\$
+    доказательство тут \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf} стр.31-32.
+\end{theorem}
+\begin{lemma}
+    Пусть $e\in BdVar$ не входит в формулу $B$. Тогда $B[x/y]$ есть формула и $B[x/y] \equiv B$ \\
+    д-во стр.32 \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf} 
+\end{lemma}
+\begin{theorem}
+    Пусть формула $A$ общезначима и разрешена подстановка формулы $C$ вместо $P$ в $A$, тогда общезначима формула $A[P/C]$.
+     д-во стр.32 \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf} 
+\end{theorem}
+\begin{definition}
+    Формула $A$ называется \textbf{предварённой}, если $A$ имеет вид $\mathrm{Q} x_{1} \mathrm{Q} x_{2} \ldots \mathrm{Q} x_{n} A_{0}\left[b_{1} / x_{1}, \ldots, b_{n} / x_{n}\right]$,где $Q$ означает квантор $\forall$ или $\exists$, а формула $A_0$ бескванторная.
+\end{definition}
+Далее тут доказательства см. стр.33 \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf}
+\begin{theorem}
+    Для любых $\alpha,\beta$ и любых формул $A,B$, не содержащих переменных из $\alpha,\beta$ имеем:\\
+    1)$\alpha A \wedge B \equiv \alpha(A \wedge B) ; \alpha A \vee B \equiv \alpha(A \vee B)$\\
+    2)$\neg \alpha A \equiv \bar{\alpha} \neg A$, где $\bar{\alpha}$ получается их $\alpha$ заменой всех символов $\exists$ на $\forall$ и наоборот.
+\end{theorem}
+\begin{theorem}
+    Для каждой формулы $A$ можно указать эквивалентную ей предварённую формулу $A'$ от тех же свободных переменных. Такую формулу $A'$ называем предварённой формой формулы $A$.
+\end{theorem}

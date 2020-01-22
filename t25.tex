@@ -1,0 +1,32 @@
+\section{Теорема Гёделя о полноте исчисления предикатов (без доказательства), её
+три эквивалентные формулировки (с доказательством эквивалентности).
+Теорема Гёделя–Мальцева о компактности для логики предикатов.}
+\begin{theorem}
+    \textbf{Теорема Геделя} (приводится без доказательства)\\
+    Приведем три различные формулировки и докажем их эквивалентность\\
+    A -- замкнутая формула, М -- модель, T -- теория\\
+    1. Всякая непротиворечивая теория $T$ выполнима, то есть имеет модель $\boldsymbol{M}\models \boldsymbol{T}$ (символ $\models$ означает M -- модель теории T)\\
+    2. Если $ \boldsymbol{T} \nvdash \boldsymbol{A}$, то найдется модель $\boldsymbol{M}\models \boldsymbol{T}$, для которой $\boldsymbol{M} \nvDash \boldsymbol{A}$ (символ $\vdash$ -- см.билет 22)\\
+    3. $\boldsymbol{T}\models \boldsymbol{A}$ (A логически следует из T) влечет $ \boldsymbol{T} \vdash \boldsymbol{A}$ (A выводима из T).
+\end{theorem}
+
+\textbf{Равносильность формулировок}
+
+    $\boldsymbol{(1)}\Rightarrow \boldsymbol{(2)}$
+    
+    Если $ \boldsymbol{T} \nvdash \boldsymbol{A}$ то по теореме о дедукции $\boldsymbol{T} \cup \{\neg \boldsymbol{A}\}$ непротиворечива.
+    Следовательно, \\$\boldsymbol{T} \cup \{\neg \boldsymbol{A}\}$ имеет модель $M$
+    
+    $\boldsymbol{(2)}\Rightarrow \boldsymbol{(3)}$
+    пусть $T\vDash A$ , если бы при этом $ \boldsymbol{T} \nvdash \boldsymbol{A}$, то по 2-му условию существовала бы модель $T$,такая что $A$ в ней не выразимо. Но $A$ выразимо в $T$,а значит и в $M$-противоречие.
+    $\boldsymbol{(3)}\Rightarrow \boldsymbol{(1)}$\\
+    Возьмем $\boldsymbol{A} = \boldsymbol{B} \wedge \neg \boldsymbol{B} $. Тогда $\boldsymbol{T}\models \boldsymbol{A}$, следовательно $\boldsymbol{T} \nvDash \boldsymbol{A}$ и у теории $\boldsymbol{T}$ должна быть модель, опровергающая $\boldsymbol{A}$
+
+\begin{theorem} 
+
+\textbf{Теорема Мальцева о компактности}\\
+    1.Теория $\boldsymbol{T}$ выполнима $ \Longleftrightarrow$ любое конечное подмножество $\boldsymbol{T_0}\subseteq \boldsymbol{T}$ выполнимо\\
+    2. $\boldsymbol{T}\models \boldsymbol{A}$   $ \Longleftrightarrow$ существует такое конечное множество $\boldsymbol{T_0}\subseteq \boldsymbol{T}$, что $\boldsymbol{T_0}\models \boldsymbol{A}$  
+\end{theorem}
+Теорема о компактности вытекает из теоремы о полноте и свойства компактности отношения выводимости.\\
+Предположим противное, т.е. что для любого конечного $\boldsymbol{T_0}\subseteq \boldsymbol{T}$ выполняется  $\boldsymbol{T_0}\nvDash \boldsymbol{A}$. Тогда для каждого конечного существует модель, для которой предложение $\neg \boldsymbol{A}$  истинно. По теореме компактности существует модель, в которой все предложения из $\boldsymbol{T}$ и предложение $\neg \boldsymbol{A}$ истинны. Но тогда вопреки условию $\boldsymbol{T}\nvDash \boldsymbol{A}$ .

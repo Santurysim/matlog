@@ -1,0 +1,55 @@
+\section{Связь между формулами логики высказываний от n переменных и булевыми функциями. Теорема о функциональной полноте.}
+
+\begin{definition}
+Таблицей истинности (или истинностной таблицей) формулы A над переменными $P_1$,...,$P_n$ называется таблица,
+указывающая значения формулы A при всех возможных оценках переменных $P_1$,...,$P_n$.
+
+Таким образом, таблица истинности формулы A над n переменными задаёт булеву функцию $\varphi_A : \mathbb{B}^n$ $\to$ $\mathbb{B}$. Функция $\varphi_A$ определяется равенством
+\begin{center}
+$\varphi_A (\vec{x}) = f_{\vec{x}}$ (A),
+\end{center}
+верным для всех наборов $\vec{x} \in \mathbb{B}^n$
+\end{definition}
+
+\begin{theorem}[о функциональной полноте]
+Для любой функции $\varphi$: $\mathbb{B}^n$ $\to$ $\mathbb{B}$ найдётся такая формула A от n переменных, что $\varphi = \varphi_A$. При этом можно считать, что A содержит лишь связки $\neg$ и $\lor$.
+\end{theorem}
+
+\begin{proof}
+Равенство $\varphi = \varphi_A$ означает, что для всех $\vec{x} \in \mathbb{B}^n$
+\begin{center}
+$\varphi (\vec{x}) = \varphi_A (\vec{x}) = f_{\vec{x}} (A)$
+\end{center}
+Для x $\in \mathbb{B}$ положим
+\begin{equation*}
+P^x= 
+    \begin{cases}
+        P  &\text{ если $x = $И} \\
+        \neg P &\text{если $x = $Л}
+    \end{cases}
+\end{equation*}
+Для произвольного $\vec{x} = (x_1,...,x_n) \in \mathbb{B}^n$ обозначим
+\begin{center}
+$A_{\vec{x}}$   $\rightleftarrows  \bigwedge_{i=1}^n P_i^{x_i}$
+\end{center}
+Легко видеть, что формула $A_{\vec{x}}$ истинна лишь при оценке $f_{\vec{x}}$. Другими словами, для любой оценки f
+\begin{center}
+f($A_{\vec{x}}$) = И $\Longleftrightarrow$ f = $f_{\vec{x}}$ (1)
+\end{center}
+Для данной функции $\varphi$ пусть список $\vec{x_1}$,...,$\vec{x_m}$ исчерпывает все наборы $\vec{x} \in \mathbb{B}$ для которых $\varphi(\vec{x})$ = И, то есть 
+\begin{center}
+$\varphi(\vec{x}) = $И $\Longleftrightarrow$ $\exists j \ \vec{x} = \vec{x}_j$ (2)
+\end{center}
+Положим теперь
+\begin{center}
+A $\rightleftarrows \bigvee_{j=1}^m A_{\vec{x}_j}$
+\end{center}
+тогда: 
+\begin{center}
+$f_{\vec{x}}$ (A) = И $\Longleftrightarrow \exists j \ f_{\vec{x}} (A_{\vec{x}_j})$\\
+$\Longleftrightarrow \exists j \vec{x} = \vec{x}_j$ по (1)\\
+$\Longleftrightarrow \varphi (\vec{x}) =$И по (2)
+\end{center}
+Заметим теперь, что конъюнкция выражается через дизъюнкцию и
+отрицание, поскольку формула A $\land$ B равносильна $\neg(\neg A \lor \neg B)$.  Поэтому, формулы $A_{\vec{x}}$ могут быть переписаны без использования знака $\land$. 
+\end{proof}
