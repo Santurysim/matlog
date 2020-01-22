@@ -13,13 +13,20 @@
 	= y$$ выразим.
 \end{definition}
 \begin{example}
-	Выразим в модели элементарной геометрии $(\mathbb{R}^2;=,\cong,B)$ предикат параллельности прямых. Для этого
-	введём следующие предикаты:
+	Выразим в модели элементарной геометрии $(\mathbb{R}^2;=,\cong,B)$ предикат параллельности прямых и аксиому
+	параллельности прямых. Для этого введём следующие предикаты:
 	\begin{itemize}
 		\item $a \ne b \rightleftharpoons \neg a=b$
 		\item $c \in ab$ <<$c$ лежит на прямой $ab$>>: $$c\in ab \rightleftharpoons B(c,a,b)\vee B(a,b,c)\vee
 			B(a,c,b)$$
-		\item $ab\parallel cd$ <<$ab$ параллельна $cd$>>: 
+		\item $ab\parallel cd$ <<$ab$ параллельна $cd$>>: $$ab\parallel cd\rightleftharpoons (a \ne b\wedge c \ne
+			d\wedge \forall x\neg ((x\in ab)\wedge (x\in cd)))$$
+		\item аксиома параллельности прямых:
+			\begin{quote}
+				Через точку $x$ вне прямой $ab$ можно провести прямую, параллельную $ab$, и притом только одну.
+			\end{quote}
+			$$\forall a,b,x\,(a\ne b \wedge\neg x\in ab \to \forall u,v\,(xu\parallel ab \wedge xv\parallel ab\to
+			v\in xu))$$
 	\end{itemize}
 \end{example}
 % vim: textwidth=115 colorcolumn=120

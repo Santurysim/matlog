@@ -1,0 +1,31 @@
+\section{Гомомрфизмы и изоморфизмы моделей. Теорема о сохранении истинностного значения формулы при изоморфизме.
+Автоморфизмы моделей, метод доказательства невыразимости с помощью автоморфизмов. Описание автоморфизмов моделей
+$(\mathbb Z;\leqslant)$,$(\mathbb R^2;=,B)$ и $(\mathbb R^2;=,B,\cong)$ и примеры невыразимых предикатов в этих
+моделях}
+\begin{definition}
+	Пусть $M$ и $M'$ - две модели сигнатуры $\Sigma$. \textbf{Гомоморфизмом} моделей $M$ и $M'$ называется
+	отображение $\varphi\colon M\to M'$, такое, что сохраняются все предикаты, функции и константы $\Sigma$:
+	$$
+		P_M(x_1,\ldots,x_n) \leftrightarrow P_{M'}(\varphi(x_1),\ldots,\varphi(x_n)),\quad\forall P\in
+		\mathrm{Pred}_\Sigma
+	$$
+	$$
+		\varphi(f_M(x_1,\ldots,x_n)) = f_{M'}(\varphi(x_1),\ldots,\varphi(x_n)),\quad\forall f\in\mathrm{Func}_\Sigma
+	$$
+	$$
+		\varphi(c_M) = c_{M'},\quad\forall c\in\mathrm{Const}_\Sigma
+	$$
+\end{definition}
+\begin{definition}
+	\textbf{Изоморфизмом} моделей $M$ и $M'$ называется гомоморфизм $\varphi$, для которого существует обратный
+	гомоморфизм $\psi\colon M\to M'$, такой, что $\psi\circ\varphi =\varphi\circ\psi =\mathrm{id}_M$, где
+	$\mathrm{id}_M$ - тождественный гомоморфизм на $M$.
+	Две модели \textbf{изоморфны}, если существует изоморфизм этих моделей.
+\end{definition}
+\begin{definition}
+	\textbf{Автоморфизмом} модели называется изоморфизм модели на себя.
+\end{definition}
+\begin{theorem}
+
+\end{theorem}
+% vim: colorcolumn=120 textwidth=115
