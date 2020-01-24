@@ -1,54 +1,55 @@
 \section{Теорема о дедукции для исчисления предикатов.}
 Обозначение: $T,A \vdash B$ вместо $T \cup \{A\} \vdash B$
 \begin{theorem}
-    Для любой теории $T$ и замкнутой формулы $A$
-    \begin{center}
-        $T, A \vdash B \Longleftrightarrow T \vdash A \rightarrow B$
-    \end{center}
+	Для любой теории $T$ и замкнутой формулы $A$
+	\begin{center}
+		$T, A \vdash B \Longleftrightarrow T \vdash A \rightarrow B$
+	\end{center}
 \end{theorem}
 \begin{proof}
-Индукция по длине вывода из гипотез $T,A \vdash B$\\
-Если $B$ является аксиомой или принадлежит $T$, то искомый вывод выглядит так:
-    \begin{center}
-    $B$\\
-    $B \rightarrow(A \rightarrow B)$\\
-    $A \rightarrow B$   (MP)
-    \end{center}
-Если формула $B$ совпадает с $A$, то $A \rightarrow B$ есть тавтология $A \rightarrow A$, то есть аксиома A1\\
-Если $A$ получена из некоторых предыдущих формул по правилу вывода
-modus ponens, то эти формулы имеют вид $C$ и $C\rightarrow B$ Согласно предположению индукции $T \vdash (A \rightarrow C)$ и.$T \vdash (A \rightarrow (C \rightarrow B))$. Искомый вывод формулы $B$
-из множества гипотез  $T \cup \{A\}$ стоит из этих двух выводов и следующих
-формул:
-\begin{center}
-    $\begin{array}{l}
-    {(A \rightarrow(C \rightarrow B)) \rightarrow((A \rightarrow C) \rightarrow(A \rightarrow B))} \\
-    {(A \rightarrow C) \rightarrow(A \rightarrow B)} \\
-    {A \rightarrow B}
-    \end{array}$
-\end{center}
-Допустим $B=(C \rightarrow \forall x D[a / x])$ получена из $C \rightarrow D$ по R2. По предположению индукции
-\begin{center}
-    $T\vdash A \rightarrow(C\rightarrow D)$
-\end{center}
-Надо построить вывод
-\begin{center}
-    $T\vdash A \rightarrow(C\rightarrow \forall\:x\:D[a/x])$
-\end{center}
-Рассмотрим тавтологию
-\begin{center}
-    ($P \rightarrow(Q\rightarrow R))\leftrightarrow (P\wedge Q\rightarrow R)$
-\end{center}
-Подставляя $A$ место $P$, $C$ вместо $Q$ и $D$ вместо $R$ получаем, что формула
-\begin{center}
-     ($A \rightarrow(C\rightarrow D))\leftrightarrow (A\wedge C\rightarrow D)$
-\end{center}
-выводима в исчислении предикатов.\\
-Таким образом, вывод $A \rightarrow(C\rightarrow D)$ в $T$ можно продолжить:
-\begin{center}
-    $A \rightarrow(C \rightarrow D)$\\
-$(A \rightarrow(C \rightarrow D)) \rightarrow(A \wedge C \rightarrow D) \quad(\mathrm{A} 1)$\\
-$(A \wedge C) \rightarrow D$(MP)\\
-$(A \wedge C) \rightarrow \forall x D[a / x]$ (R2, $A$ замкнута)\\ $A \rightarrow(C \rightarrow \forall x D[a / x])$ (аналогично)
-\end{center}
-Правило R3 рассматривается аналогично.
+	Индукция по длине вывода из гипотез $T,A \vdash B$\\
+	Если $B$ является аксиомой или принадлежит $T$, то искомый вывод выглядит так:
+	\begin{center}
+		$B$\\
+		$B \rightarrow(A \rightarrow B)$\\
+		$A \rightarrow B$   (MP)
+	\end{center}
+	Если формула $B$ совпадает с $A$, то $A \rightarrow B$ есть тавтология $A \rightarrow A$, то есть аксиома A1\\
+	Если $B$ получена из некоторых предыдущих формул по правилу вывода
+	modus ponens, то эти формулы имеют вид $C$ и $C\rightarrow B$ Согласно предположению индукции $T \vdash (A
+	\rightarrow C)$ и $T \vdash (A \rightarrow (C \rightarrow B))$. Искомый вывод формулы $B$
+	из множества гипотез  $T \cup \{A\}$ стоит из этих двух выводов и следующих
+	формул:
+	\begin{center}
+		$\begin{array}{l}
+			{(A \rightarrow(C \rightarrow B)) \rightarrow((A \rightarrow C) \rightarrow(A \rightarrow B))} \\
+			{(A \rightarrow C) \rightarrow(A \rightarrow B)} \\
+			{A \rightarrow B}
+		\end{array}$
+	\end{center}
+	Допустим $B=(C \rightarrow \forall x D[a / x])$ получена из $C \rightarrow D$ по R2. По предположению индукции
+	\begin{center}
+		$T\vdash A \rightarrow(C\rightarrow D)$
+	\end{center}
+	Надо построить вывод
+	\begin{center}
+		$T\vdash A \rightarrow(C\rightarrow \forall\:x\:D[a/x])$
+	\end{center}
+	Рассмотрим тавтологию
+	\begin{center}
+		($P \rightarrow(Q\rightarrow R))\leftrightarrow (P\wedge Q\rightarrow R)$
+	\end{center}
+	Подставляя $A$ место $P$, $C$ вместо $Q$ и $D$ вместо $R$ получаем, что формула
+	\begin{center}
+		($A \rightarrow(C\rightarrow D))\leftrightarrow (A\wedge C\rightarrow D)$
+	\end{center}
+	выводима в исчислении предикатов.\\
+	Таким образом, вывод $A \rightarrow(C\rightarrow D)$ в $T$ можно продолжить:
+	\begin{center}
+		$A \rightarrow(C \rightarrow D)$\\
+		$(A \rightarrow(C \rightarrow D)) \rightarrow(A \wedge C \rightarrow D) \quad(\mathrm{A} 1)$\\
+		$(A \wedge C) \rightarrow D$(MP)\\
+		$(A \wedge C) \rightarrow \forall x D[a / x]$ (R2, $A$ замкнута)\\ $A \rightarrow(C \rightarrow \forall x D[a / x])$ (аналогично)
+	\end{center}
+	Правило R3 рассматривается аналогично.
 \end{proof}

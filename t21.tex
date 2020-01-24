@@ -1,45 +1,64 @@
-\section{Теории первого порядка с равенством. Нормальные модели. Теорема о существовании нормальной модели у выполнимой теории с равенством.Примеры теорий с равенством: теория групп, формальная арифметика.}
+\section{Теории первого порядка с равенством. Нормальные модели. Теорема о существовании нормальной модели у
+выполнимой теории с равенством.Примеры теорий с равенством: теория групп, формальная арифметика.}
 Пусть $\Sigma$ -- сигнатура, содержащая выделенный предикатный символ <<$ = $>>.
 \begin{definition}
-    Нормальной моделью называем модель $(M,\Sigma)$, в которой «=» интерпретируется как равенство $\{\langle x,x \rangle |x\in M \}$.
+	Нормальной моделью называем модель $(M,\Sigma)$, в которой «=» интерпретируется как равенство $\{\,\langle x,x
+	\rangle\mid x\in M \,\}$.
 \end{definition}
 \begin{definition}
-    Аксиомы равенства для $\Sigma$ суть универсальные замыкания следующих формул:
-    1) аксиомы отношения эквивалентности для <<=>>\\
-    2) $a_{1}=b_{1} \wedge a_{2}=b_{2} \wedge \cdots \wedge a_{n}=b_{n} \rightarrow\left(P\left(a_{1}, \ldots, a_{n}\right) \leftrightarrow P\left(b_{1}, \ldots, b_{n}\right)\right)$\\
-    3) $a_{1}=b_{1} \wedge a_{2}=b_{2} \wedge \cdots \wedge a_{n}=b_{n} \rightarrow\left(f\left(a_{1}, \ldots, a_{n}\right)=f\left(b_{1}, \ldots, b_{n}\right)\right)$ для всех $f\in Func_\Sigma,P\in Pred_\Sigma$
+	Аксиомы равенства для $\Sigma$ суть универсальные замыкания следующих формул:
+	\begin{enumerate}
+		\item аксиомы отношения эквивалентности для <<=>>
+		\item $a_{1}=b_{1} \wedge a_{2}=b_{2} \wedge \ldots \wedge a_{n}=b_{n} \rightarrow\left(P\left(a_{1}, \ldots,
+	a_{n}\right) \leftrightarrow P\left(b_{1}, \ldots, b_{n}\right)\right)$
+		\item $a_{1}=b_{1} \wedge a_{2}=b_{2} \wedge \ldots \wedge a_{n}=b_{n} \rightarrow\left(f\left(a_{1}, \ldots,
+	a_{n}\right)=f\left(b_{1}, \ldots, b_{n}\right)\right)$ для всех $f\in Func_\Sigma,P\in Pred_\Sigma$
+	\end{enumerate}
 \end{definition}
 \begin{proposition}
-    Если $(M,\Sigma)$ -- нормальная модель, то в $M$ истинны все аксиомы равенства.
+	Если $(M,\Sigma)$ -- нормальная модель, то в $M$ истинны все аксиомы равенства.
 \end{proposition}
 \begin{definition}
-    \textbf{Теорией с равенством} называем теорию в языке с равенством, содержащую все аксиомы равенства.
+	\textbf{Теорией с равенством} называем теорию в языке с равенством, содержащую все аксиомы равенства.
 \end{definition}
 \begin{theorem}
-    Пусть $T$ -- теория с равенством. Если $T$ выполнима, то $T$ имеет нормальную модель.
+	Пусть $T$ -- теория с равенством. Если $T$ выполнима, то $T$ имеет нормальную модель.
 \end{theorem}
 \begin{proof}
-    Пусть $M \vDash T$. Предикат $=_M$ есть отношение эквивалентности на $M$.Положим $M'\rightleftharpoons M/_{=M}$ -- множество классов эквивалентности и пусть $\phi :M\rightarrow M"$сопоставляет любому $x\in M$ его класс эквивалентности $\phi(x)\in M'$.Все функции и предикаты сигнатуры $\Sigma$ естественным образом переносятся с $M$ на $M'$. Полагаем
-    \begin{center}
-    $\begin{aligned}
-    P_{M^{\prime}}\left(\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right) & \Longleftrightarrow P_{M}\left(x_{1}, \ldots, x_{n}\right) \\
-    f_{M^{\prime}}\left(\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right) & \rightleftharpoons \varphi\left(f_{M}\left(x_{1}, \ldots, x_{n}\right)\right) \\
-    c_{M^{\prime}} & \rightleftharpoons \varphi\left(c_{M}\right)
-    \end{aligned}$
-    \end{center}
-    Заметим, что в силу истинности аксиом равенства в $M$ все функции и предикаты корректно определены на $M'$, и $M'$ -- нормальная модель.\\
-    Индукцией по построению формулы $A$ проверяем
-    \begin{center}
-        $M \vDash A\left[x_{1}, \ldots, x_{n}\right] \Longleftrightarrow M^{\prime} \vDash A\left[\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right]$
-    \end{center}
-    Отсюда следует $M'\vDash T$
+	Пусть $M \vDash T$. Предикат $=_M$ есть отношение эквивалентности на $M$.Положим $M'\rightleftharpoons M/_{=M}$
+	-- множество классов эквивалентности и пусть $\varphi\colon M\to M'$сопоставляет любому $x\in M$ его класс
+	эквивалентности $\varphi(x)\in M'$.Все функции и предикаты сигнатуры $\Sigma$ естественным образом переносятся с
+	$M$ на $M'$. Полагаем
+	\begin{center}
+		$\begin{aligned}
+			P_{M^{\prime}}\left(\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right) &
+			\Longleftrightarrow P_{M}\left(x_{1}, \ldots, x_{n}\right) \\
+			f_{M^{\prime}}\left(\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right) &
+			\rightleftharpoons \varphi\left(f_{M}\left(x_{1}, \ldots, x_{n}\right)\right) \\
+			c_{M^{\prime}} & \rightleftharpoons \varphi\left(c_{M}\right)
+		\end{aligned}$
+	\end{center}
+	Заметим, что в силу истинности аксиом равенства в $M$ все функции и предикаты корректно определены на $M'$, и
+	$M'$ -- нормальная модель.\\
+	Индукцией по построению формулы $A$ проверяем
+	\begin{center}
+		$M \vDash A\left[x_{1}, \ldots, x_{n}\right] \Longleftrightarrow M^{\prime} \vDash
+		A\left[\varphi\left(x_{1}\right), \ldots, \varphi\left(x_{n}\right)\right]$
+	\end{center}
+	Отсюда следует $M'\vDash T$
 \end{proof}
 \begin{example}
-Язык арифметики содержит один константный символ 0, один одноместный функциональный символ S и двухместные функциональные символы + и $\cdot$. Единственным (двухместным) предикатным символом языка является равенство. В стандартной интерпретации переменные принимают значения в множестве натуральных чисел N, символ 0 интерпретируется как ноль, S как операция прибавления единицы, а + и $\cdot$ как сложение и умножение соответственно. Формула в языке арифметики со свободными переменными задаёт некоторый предикат. Если предикат можно выразить некоторой формулой в языке арифметики, то он называется арифметичным. 
+	Язык арифметики содержит один константный символ 0, один одноместный функциональный символ S и двухместные
+	функциональные символы + и $\cdot$. Единственным (двухместным) предикатным символом языка является равенство. В
+	стандартной интерпретации переменные принимают значения в множестве натуральных чисел N, символ 0
+	интерпретируется как ноль, S как операция прибавления единицы, а + и $\cdot$ как сложение и умножение
+	соответственно. Формула в языке арифметики со свободными переменными задаёт некоторый предикат. Если предикат
+	можно выразить некоторой формулой в языке арифметики, то он называется арифметичным. 
 \end{example}
 \begin{example}
-    $(M;=;\cdot;1)$ есть группа, если $M$ есть модель следующей теории (при условии что <<=>> в $M$ понимается как равенство):\\
-    1) $\forall x,y,z: x\cdot(y\cdot z)=(x\cdot y)\cdot z$\\
-    2) $\forall x \ (1 \cdot x=x \wedge x \cdot 1=x)$\\
-    3) $\forall x \ \exists y \ (x \cdot y=1 \wedge y \cdot x=1)$\\
+	$(M;=;\cdot;1)$ есть группа, если $M$ есть модель следующей теории (при условии что <<=>> в $M$ понимается как
+	равенство):\\
+	1) $\forall x,y,z: x\cdot(y\cdot z)=(x\cdot y)\cdot z$\\
+	2) $\forall x \ (1 \cdot x=x \wedge x \cdot 1=x)$\\
+	3) $\forall x \ \exists y \ (x \cdot y=1 \wedge y \cdot x=1)$\\
 \end{example}

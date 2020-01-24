@@ -1,110 +1,140 @@
-\section{Натуральные числа. Индуктивные множества, аксиома бесконечности. Формальное определение множества натуральных чисел. Принципы индукции, порядковой индукции, наименьшего числа, их вывод из определения множества натуральных чисел.}
+\section{Натуральные числа. Индуктивные множества, аксиома бесконечности. Формальное определение множества
+натуральных чисел. Принципы индукции, порядковой индукции, наименьшего числа, их вывод из определения множества
+натуральных чисел.}
 
-По определению, число 0 отождествляется с пустым множеством $\varnothing$, число 1 с $\{ \varnothing \}$, число 2 с $\{ \varnothing, \{ \varnothing \}\}$ и так далее. Требуется доказать, что это множество.
+По определению, число 0 отождествляется с пустым множеством $\varnothing$, число 1 с $\{ \varnothing \}$, число 2 с
+$\{ \varnothing, \{ \varnothing \}\}$ и так далее. Требуется доказать, что это множество.
 
-\textbf{Аксиома бесконечности}: Существует $S$ такое, что $\varnothing \in S$ и для любого $x \in S$ множество $x \cup\{x\} \in S$.
+\textbf{Аксиома бесконечности}: Существует $S$ такое, что $\varnothing \in S$ и для любого $x \in S$ множество $x
+\cup\{x\} \in S$.
 
-\definition{Множество $S$ называется \textbf{индуктивным}, если $\varnothing \in S$ и $\forall x \in S$ $x \cup\{x\} \in S$.
+\definition{Множество $S$ называется \textbf{индуктивным}, если $\varnothing \in S$ и $\forall x \in S$ $x
+\cup\{x\} \in S$.
 
 Аксиома бесконечности утверждает, что существует хотя бы одно индуктивное множество.
 
 \begin{lemma}
-Пересечение непустого множества индуктивных множеств индуктивно.
+	Пересечение непустого множества индуктивных множеств индуктивно.
 \end{lemma}
 
-\begin{proof}{$\varnothing$ содержится в каждом из множеств, значит содержится и в пересечении. Если $x$ содержится в пересечении, то и $x \cup\{x\}$ содержится.}
+\begin{proof}{$\varnothing$ содержится в каждом из множеств, значит содержится и в пересечении. Если $x$ содержится
+	в пересечении, то и $x \cup\{x\}$ содержится.}
 \end{proof}
 
-Пусть $S$ — некоторое индуктивное множество, существующее по аксиоме бесконечности. Рассмотрим множество $\mathcal{I}$ всех индуктивных подмножеств $S$.
-Обозначим через $\omega$ его пересечение: $\omega:=\cap \mathcal{I}$. Из леммы  получаем, что $\omega$ индуктивно. Кроме того, $\omega$ содержится в любом индуктивном множестве: если $S^{\prime}$ индуктивно, то таковым является $S \cap S^{\prime}$, откуда $S \cap S^{\prime} \in \mathcal{I}$ и следовательно $\omega \subset S \cap S^{\prime}$. Таким образом, мы показали, что $\omega$ есть наименьшее (по включению) индуктивное множество. Такое множество единственно по аксиоме объёмности.
+Пусть $S$ — некоторое индуктивное множество, существующее по аксиоме бесконечности. Рассмотрим множество
+$\mathcal{I}$ всех индуктивных подмножеств $S$.
+Обозначим через $\omega$ его пересечение: $\omega:=\cap \mathcal{I}$. Из леммы  получаем, что $\omega$ индуктивно.
+Кроме того, $\omega$ содержится в любом индуктивном множестве: если $S^{\prime}$ индуктивно, то таковым является $S
+\cap S^{\prime}$, откуда $S \cap S^{\prime} \in \mathcal{I}$ и следовательно $\omega \subset S \cap S^{\prime}$.
+Таким образом, мы показали, что $\omega$ есть наименьшее (по включению) индуктивное множество. Такое множество
+единственно по аксиоме объёмности.
 
-\definition{Наименьшее по включению индуктивное множество называется \textbf{множеством натуральных чисел} (обозначение $\mathbb{N}$ или $\omega$).}
+\definition{Наименьшее по включению индуктивное множество называется \textbf{множеством натуральных чисел}
+(обозначение $\mathbb{N}$ или $\omega$).}
 
-Отметим, что $0 := \varnothing \in \mathbb{N}$ и из того, что $n \in \mathbb{N}$ следует $n \cup\{n\} \in \mathbb{N}$. Натуральное число $n \cup\{n\}$ назовём \textbf{следующим} за $n$ и будем обозначать $S(n) = n + 1$. Функция $n \mapsto n+1$ действует из $\mathbb{N}$ в $\mathbb{N}$. Для $n \in \mathbb{N}$ и любого $m$ определим $m < n$, если и только если $m \in n$. (Ниже мы докажем, что из $m \in n \in \mathbb{N}$ следует $m \in \mathbb{N}$.) Из этого определения мы видим, что для всех $m, n \in \mathbb{N}$ 
+Отметим, что $0 := \varnothing \in \mathbb{N}$ и из того, что $n \in \mathbb{N}$ следует $n \cup\{n\} \in
+\mathbb{N}$. Натуральное число $n \cup\{n\}$ назовём \textbf{следующим} за $n$ и будем обозначать $S(n) = n + 1$.
+Функция $n \mapsto n+1$ действует из $\mathbb{N}$ в $\mathbb{N}$. Для $n \in \mathbb{N}$ и любого $m$ определим $m
+< n$, если и только если $m \in n$. (Ниже мы докажем, что из $m \in n \in \mathbb{N}$ следует $m \in \mathbb{N}$.)
+Из этого определения мы видим, что для всех $m, n \in \mathbb{N}$ 
 
 $$m<n+1 \leftrightarrow(m<n \vee m=n)$$
 
 \subsection{Принцип математической индукции}
 
 \begin{theorem}
-(принцип индукции) Допустим, что некоторое множество $A$ удовлетворяет условиям: $0 \in A$ и $\forall n \in \mathbb{N} \ (n \in A \rightarrow n+1 \in A)$. Тогда $\forall n \in \mathbb{N} \ n \in A$.
+	(принцип индукции) Допустим, что некоторое множество $A$ удовлетворяет условиям: $0 \in A$ и $\forall n \in
+	\mathbb{N} \ (n \in A \rightarrow n+1 \in A)$. Тогда $\forall n \in \mathbb{N} \ n \in A$.
 \end{theorem}
 
-\begin{proof}{По условию теоремы множество $A \cap \mathbb{N}$ индуктивно. Поскольку $\mathbb{N}$ -- наименьшее индуктивное, мы имеем $\mathbb{N} \subset A$.}
+\begin{proof}{По условию теоремы множество $A \cap \mathbb{N}$ индуктивно. Поскольку $\mathbb{N}$ -- наименьшее
+	индуктивное, мы имеем $\mathbb{N} \subset A$.}
 \end{proof}
 
 \begin{theorem}
-(порядковая индукция) Пусть множество $A$ удовлетворяет условию $\forall n \in \mathbb{N}(\forall m<n \ m \in A \rightarrow n \in A)$. Тогда $\forall n \in \mathbb{N} \ n \in A$.
+	(порядковая индукция) Пусть множество $A$ удовлетворяет условию $\forall n \in \mathbb{N}(\forall m<n \ m \in A
+	\rightarrow n \in A)$. Тогда $\forall n \in \mathbb{N} \ n \in A$.
 \end{theorem}
 
 \begin{proof}{Предположим, что $A$ удовлетворяет условию теоремы. Рассмотрим множество
 
-$$A^{\prime}:=\{x \in \mathbb{N}: \forall y<x \ y \in A\}$$
+	$$A^{\prime}:=\{x \in \mathbb{N}: \forall y<x \ y \in A\}$$
 
-Тогда $0 \in A$, поскольку $\neg \exists y$ $y<0$, то есть условие $\forall y<0$ $y \in A$ выполняется тривиально. Допустим $n \in \mathbb{N}$ и $n \in A^{\prime}$, тогда $\forall m<n$ $m \in A$. По условию теоремы отсюда следует $n \in A$. Мы утверждаем, что $\forall m < n + 1$ $m \in A$, то есть $n+1 \in A^\prime$. В самом деле, если $m < n + 1$, то $ m < n$ или $ m = n$. В каждом из этих случаев мы уже знаем, что $m \in A$. По предыдущей теореме мы заключаем $\forall n \in \mathbb{N}$ $n \in A^{\prime}$. Осталось вывести отсюда $\forall n \in \mathbb{N}$ $n \in A$. Рассмотрим любое $n \in \mathbb{N}$, тогда $n + 1 \in \mathbb{N}$ и по доказанному $n + 1 \in A^{\prime}$. Поскольку $n < n + 1$, по определению $A^\prime$ отсюда следует $n \in A$.}
+	Тогда $0 \in A$, поскольку $\neg \exists y$ $y<0$, то есть условие $\forall y<0$ $y \in A$ выполняется
+	тривиально. Допустим $n \in \mathbb{N}$ и $n \in A^{\prime}$, тогда $\forall m<n$ $m \in A$. По условию теоремы
+	отсюда следует $n \in A$. Мы утверждаем, что $\forall m < n + 1$ $m \in A$, то есть $n+1 \in A^\prime$. В самом
+	деле, если $m < n + 1$, то $ m < n$ или $ m = n$. В каждом из этих случаев мы уже знаем, что $m \in A$. По
+	предыдущей теореме мы заключаем $\forall n \in \mathbb{N}$ $n \in A^{\prime}$. Осталось вывести отсюда $\forall
+	n \in \mathbb{N}$ $n \in A$. Рассмотрим любое $n \in \mathbb{N}$, тогда $n + 1 \in \mathbb{N}$ и по доказанному
+	$n + 1 \in A^{\prime}$. Поскольку $n < n + 1$, по определению $A^\prime$ отсюда следует $n \in A$.}
 \end{proof}
 
 \begin{theorem}
-(принцип минимального элемента) Всякое непустое подмножество $A \subset \mathbb{N}$ имеет минимальный элемент.
+	(принцип минимального элемента) Всякое непустое подмножество $A \subset \mathbb{N}$ имеет минимальный элемент.
 \end{theorem}
 
 \begin{proof} Допустим противное, то есть $A \neq \varnothing$ и
 
-$$\neg \exists n \in A \ \forall m<n \  m \notin A$$
+	$$\neg \exists n \in A \ \forall m<n \  m \notin A$$
 
-Рассмотрим $B:=\mathbb{N} \backslash A$ Докажем
+	Рассмотрим $B:=\mathbb{N} \backslash A$ Докажем
 
-$$\forall n \in \mathbb{N}(\forall m<n \  m \in B \rightarrow n \in B)$$
+	$$\forall n \in \mathbb{N}(\forall m<n \  m \in B \rightarrow n \in B)$$
 
-Допустим $n \in \mathbb{N}$ и $\forall m<n \  m \in B$. Тогда $\forall m<n \ m \notin A$. Значит $n \notin A$ в силу первого утверждения, то есть $n \in B$. По теореме 2.2 заключаем, что $\forall n \in \mathbb{N} \ n \in B$. Отсюда следует $A = \varnothing$, противоречие.
+	Допустим $n \in \mathbb{N}$ и $\forall m<n \  m \in B$. Тогда $\forall m<n \ m \notin A$. Значит $n \notin A$ в
+	силу первого утверждения, то есть $n \in B$. По теореме 2.2 заключаем, что $\forall n \in \mathbb{N} \ n \in
+	B$. Отсюда следует $A = \varnothing$, противоречие.
 \end{proof}
 
 \begin{corollary}
-$\forall n \in \mathbb{N} \ n \not<n$.
+	$\forall n \in \mathbb{N} \ n \not<n$.
 \end{corollary}
 
 \begin{proof} 
-Применим порядковую индукцию. Допустим $\forall m < n \ m \not< m$. Если $ n < n$, то в качестве $m$ можно взять само $n$, тогда получим
-$n \not< n$, противоречие. Следовательно, $n \not< n$. 
+	Применим порядковую индукцию. Допустим $\forall m < n \ m \not< m$. Если $ n < n$, то в качестве $m$ можно
+	взять само $n$, тогда получим
+	$n \not< n$, противоречие. Следовательно, $n \not< n$. 
 \end{proof}
 
 \begin{corollary} 
-$\forall n \in \mathbb{N} \ \forall x<n \ x \in \mathbb{N}$ 
+	$\forall n \in \mathbb{N} \ \forall x<n \ x \in \mathbb{N}$ 
 \end{corollary}
 
 \begin{proof} 
-Применим индукцию. $\forall m < 0 \ m \in \mathbb{N}$ тривиально.
-Допустим $n \in \mathbb{N}$ и $\forall x<n \ x \in \mathbb{N}$. Тогда очевидно $\forall x<n+1 \ x \in \mathbb{N}$. 
+	Применим индукцию. $\forall m < 0 \ m \in \mathbb{N}$ тривиально.
+	Допустим $n \in \mathbb{N}$ и $\forall x<n \ x \in \mathbb{N}$. Тогда очевидно $\forall x<n+1 \ x \in \mathbb{N}$. 
 \end{proof}
 
 \begin{corollary} 
-$\forall k, m, n \in \mathbb{N} \ (k<m<n \rightarrow k<n)$.
+	$\forall k, m, n \in \mathbb{N} \ (k<m<n \rightarrow k<n)$.
 \end{corollary}
 
 \begin{proof} 
-Индукция по $n$. Случай $n = 0$ тривиален. Допустим, что утверждение верно для $n$ и имеет место $k<m<n + 1$. Тогда $m < n$ или $m = n$. В первом случае по предположению индукции $k < n$. Во втором случае мы уже знаем, что $k < n = m$. Из $k < n$ следует и
-$k < n + 1$. 
+	Индукция по $n$. Случай $n = 0$ тривиален. Допустим, что утверждение верно для $n$ и имеет место $k<m<n + 1$.
+	Тогда $m < n$ или $m = n$. В первом случае по предположению индукции $k < n$. Во втором случае мы уже знаем,
+	что $k < n = m$. Из $k < n$ следует и
+	$k < n + 1$. 
 \end{proof}
 
 \begin{corollary} 
-$\forall m, n \in \mathbb{N} \ \neg(n<m \wedge m<n)$.
+	$\forall m, n \in \mathbb{N} \ \neg(n<m \wedge m<n)$.
 \end{corollary}
 
 \begin{proof} 
-Если $n<m<n$, то $n<n$, что противоречит следствию 2.3.1. 
+	Если $n<m<n$, то $n<n$, что противоречит следствию 2.3.1. 
 \end{proof}
 
 \subsection{Аксиомы Дедекинда-Пеано}
 
 \begin{enumerate}
 
-\item{$ \forall n \in \mathbb{N} \  S(n) \not= 0$}
+	\item{$ \forall n \in \mathbb{N} \  S(n) \not= 0$}
 
-\item{$ \forall n,m \in \mathbb{N} \ (S(n)=S(m) \leftrightarrow n = m)$}
+	\item{$ \forall n,m \in \mathbb{N} \ (S(n)=S(m) \leftrightarrow n = m)$}
 
-\item{$ \forall n \in \mathbb{N} \ (n = 0 \lor \exists m (S(m) = n))$}
+	\item{$ \forall n \in \mathbb{N} \ (n = 0 \lor \exists m (S(m) = n))$}
 
-\item{Принцип индукции}
+	\item{Принцип индукции}
 
 \end{enumerate}
 
@@ -112,17 +142,18 @@ $\forall m, n \in \mathbb{N} \ \neg(n<m \wedge m<n)$.
 
 \begin{proof}
 
-\begin{enumerate}
+	\begin{enumerate}
 
-\item{Множество $S(n)=n+1$ непусто}
+		\item{Множество $S(n)=n+1$ непусто}
 
-\item{Легко доказывается индукцией по $n$}
+		\item{Легко доказывается индукцией по $n$}
 
-\item{Достаточно доказать импликацию слева направо. Допустим $n \cup\{n\}=m \cup\{m\}$. Так как $m \in n \cup\{n\}$ имеем $m \in n$ или
-$m = n$. Во втором случае утверждение доказано. Допустим $m \in n$. Так
-как $n \in m \cup\{m\}$ имеем $n \in m$ или $n = m$. Первый случай невозможен
-по следствию 2.3.4. Остаётся второй.}
+		\item{Достаточно доказать импликацию слева направо. Допустим $n \cup\{n\}=m \cup\{m\}$. Так как $m \in n
+			\cup\{n\}$ имеем $m \in n$ или
+			$m = n$. Во втором случае утверждение доказано. Допустим $m \in n$. Так
+			как $n \in m \cup\{m\}$ имеем $n \in m$ или $n = m$. Первый случай невозможен
+			по следствию 2.3.4. Остаётся второй.}
 
-\item{По определению.}
-\end{enumerate}
+		\item{По определению.}
+	\end{enumerate}
 \end{proof}

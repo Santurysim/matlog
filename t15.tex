@@ -3,34 +3,43 @@
 сигнатуры в данной модели. Истинностное значение замкнутой формулы
 расширенной сигнатуры в данной модели.}
 
-Пусть M -- модель сигнатуры $\Sigma$. Обозначим через $ \Sigma(M)$ сигнатуру, получаемую из $  \Sigma$ добавлением новых символов констант ${\underline {c} : c \in M. \label{formula5} } $
- 
- 
+Пусть M -- модель сигнатуры $\Sigma$. Обозначим через $ \Sigma(M)$ сигнатуру, получаемую из $  \Sigma$ добавлением
+новых символов констант ${\underline {c} : c \in M. \label{formula5} } $
+
+
 \definition{
 
-Пусть t -- замкнутый терм языка $L_{\Sigma (M) }$. Значение терма
-t в модели M есть элемент $ t_{M} \in M  $, определяемый индукцией по построению t.\\
-(i) Если $a \in M $ то  $\underline{a}_{M} \rightleftharpoons a$;\\
-(ii) Если $ c \in Const_{\Sigma} $ , то $c_{M} $ есть данная нам интерпретация c.\\
-(iii) Если t есть $f(t_{1},...,t_{n})  $, гдe $f \in Func_{\Sigma}$, то $ t_{M} \rightleftharpoons f_{M}((t_{1})_M,..,(t_{n})_M )$ \\
+	Пусть t -- замкнутый терм языка $L_{\Sigma (M) }$. Значение терма
+	t в модели M есть элемент $ t_{M} \in M  $, определяемый индукцией по построению t.\\
+	(i) Если $a \in M $ то  $\underline{a}_{M} \rightleftharpoons a$;\\
+	(ii) Если $ c \in Const_{\Sigma} $ , то $c_{M} $ есть данная нам интерпретация c.\\
+	(iii) Если t есть $f(t_{1},...,t_{n})  $, гдe $f \in Func_{\Sigma}$, то $ t_{M} \rightleftharpoons
+	f_{M}((t_{1})_M,..,(t_{n})_M )$ \\
 } 
 \begin{definition}
-Пусть A -- замкнутая формула языка $L_{\Sigma }$(M). \textit{Истинностное значение} формулы A в модели M определяется индукцией по построению A (oтношение $ M \vDash A $ читается ''формула А истина в модели M'') \label{formula6}  \\
-1. $M \vDash P\left(t_{1}, \ldots, t_{n}\right) \stackrel{\text { def }}{\Longleftrightarrow} P_{M}\left(\left(t_{1}\right)_{M}, \ldots,\left(t_{n}\right)_{M}\right),$ если $A=P\left(t_{1}, \ldots, t_{n}\right)-$
-атомарная формула;\\
-2. $M \vDash(B \rightarrow C) \stackrel{\text { def }}{\Longleftrightarrow}(M \nvDash B \text { или } M \vDash C)$ \\
-3. $M \vDash \neg B \stackrel{\text { def }}{\Longleftrightarrow} M \nvDash B$ \\
-4. $M \vDash(B \wedge C) \stackrel{\text { def }}{\Longleftrightarrow}\left(M \vDash B \text{ и } M \vDash C\right)$\\
-5. $M \vDash(B \vee C) \stackrel{\text { def }}{\Longleftrightarrow}(M \vDash B \text { или } M \vDash C)$ \\
-6. $M \vDash(\forall x B[a / x]) \stackrel{\text { def }}{\Longleftrightarrow}$ для всех $x \in M \ M \vDash B[a / \underline{x}]$ \\
-7. $M \vDash(\exists x B[a / x]) \stackrel{\text { def }}{\Longleftrightarrow}$ существует $x \in M \ M \vDash B[a / \underline{x}]$ \\
-Если список $b_{1}, \ldots , b_{n}  $ coдержит все свободные переменные формулы A, а
-$x_{1}, \ldots, x_{n} \in M,$ To $M \vDash A\left[b_{1} / \underline{x}_{1}, \ldots, b_{n} / \underline{x}_{n}\right]$ сокращенно записываем как $M \vDash$
-$A\left[b_{1} / x_{1}, \ldots, b_{n} / x_{n}\right]$ или даже $M \vDash A\left[x_{1}, \ldots, x_{n}\right]$.
+	Пусть A -- замкнутая формула языка $L_{\Sigma }$(M). \textit{Истинностное значение} формулы A в модели M
+	определяется индукцией по построению A (oтношение $ M \vDash A $ читается ''формула А истина в модели M'')
+	\label{formula6}  \\
+	1. $M \vDash P\left(t_{1}, \ldots, t_{n}\right) \stackrel{\text { def }}{\Longleftrightarrow}
+	P_{M}\left(\left(t_{1}\right)_{M}, \ldots,\left(t_{n}\right)_{M}\right),$ если $A=P\left(t_{1}, \ldots,
+	t_{n}\right)-$
+	атомарная формула;\\
+	2. $M \vDash(B \rightarrow C) \stackrel{\text { def }}{\Longleftrightarrow}(M \nvDash B \text { или } M \vDash C)$ \\
+	3. $M \vDash \neg B \stackrel{\text { def }}{\Longleftrightarrow} M \nvDash B$ \\
+	4. $M \vDash(B \wedge C) \stackrel{\text { def }}{\Longleftrightarrow}\left(M \vDash B \text{ и } M \vDash C\right)$\\
+	5. $M \vDash(B \vee C) \stackrel{\text { def }}{\Longleftrightarrow}(M \vDash B \text { или } M \vDash C)$ \\
+	6. $M \vDash(\forall x B[a / x]) \stackrel{\text { def }}{\Longleftrightarrow}$ для всех $x \in M \ M \vDash B[a /
+	\underline{x}]$ \\
+	7. $M \vDash(\exists x B[a / x]) \stackrel{\text { def }}{\Longleftrightarrow}$ существует $x \in M \ M \vDash B[a
+	/ \underline{x}]$ \\
+	Если список $b_{1}, \ldots , b_{n}  $ coдержит все свободные переменные формулы A, а
+	$x_{1}, \ldots, x_{n} \in M,$ To $M \vDash A\left[b_{1} / \underline{x}_{1}, \ldots, b_{n} /
+	\underline{x}_{n}\right]$ сокращенно записываем как $M \vDash$
+	$A\left[b_{1} / x_{1}, \ldots, b_{n} / x_{n}\right]$ или даже $M \vDash A\left[x_{1}, \ldots, x_{n}\right]$.
 
 \end{definition}
 \begin{remark}
-Нельзя говорить об истинности или ложности незамкнутых
-формул, поскольку их истинностные значения зависят от выбора значений параметров — входящих в формулу свободных переменных. Например, Формула $a+1 = b$  в стандартной модели арифметики может
-быть как истинна, так и ложна, в зависимости от a и b.
+	Нельзя говорить об истинности или ложности незамкнутых формул, поскольку их истинностные значения зависят от выбора
+	значений параметров — входящих в формулу свободных переменных. Например, Формула $a+1 = b$  в стандартной
+	модели арифметики может быть как истинна, так и ложна, в зависимости от a и b.
 \end{remark}

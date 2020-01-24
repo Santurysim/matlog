@@ -1,37 +1,50 @@
 \section{Общезначимость аксиом исчисления предикатов. Теорема о корректности исчисления предикатов.}
 \begin{definition}
-Теория $T$ \textbf{противоречива}, если существует формула $A$
-такая, что $T\vdash A$ и  $T\vdash \neg A$.В противном случае теория $T$ называется непротиворечивой.
+	Теория $T$ \textbf{противоречива}, если существует формула $A$
+	такая, что $T\vdash A$ и  $T\vdash \neg A$.В противном случае теория $T$ называется непротиворечивой.
 \end{definition}
-\begin{corollary}[Из теоремы о дедукции получаем следующее следствие].\\ Пусть формула $T$ замкнута. Тогда теория $T \cup \{A\}$ противоречива $\Longleftrightarrow T \vdash \neg A$
+\begin{corollary}[Из теоремы о дедукции] Пусть формула $A$ замкнута. Тогда теория
+	$T \cup \{A\}$ противоречива $\Longleftrightarrow T \vdash \neg A$
 \end{corollary}
-Следующая теорема называется теоремой о корректности исчисления предикатов.
-\begin{theorem}
-Если $M\vDash T$ и $T \vdash B(b_1,\dots,b_n$), то $M \vDash B([b_1]/x_1,\dots,[b_n]/x_n)$ \\для любых $x_1\dots x_n \in M$
+\begin{theorem}[О корректности исчисления предикатов]
+	Если $M\vDash T$ и $T \vdash B(b_1,\dots,b_n$), то $M \vDash B([b_1]/x_1,\dots,[b_n]/x_n)$ для любых
+	$x_1\dots x_n \in M$
 \end{theorem}
 \begin{proof}
-Индукция по длине вывода формулы $B$ в $T$. Если $B\in T$, то $M\vDash B$, поскольку $M\vDash T$.\\\medskip 
-Рассмотрим случай, когда $B$ -- логическая аксиома вида A3, то есть $B=(A[a / t] \rightarrow \exists x A[a / x])$. Можно считать $B$ (после подстановки констант вместо свободных переменных) замкнутой формулой, а $t$ — замкнутым термом сигнатуры $\Sigma(M)$.\\\medskip 
-Допустим $M \vDash A[a / t]$. Пусть $c \rightleftharpoons t_{M}$, тогда $M \vDash A[a / \underline{c}]$, а значит и $M \vDash \exists\:x A[a/x]$ (см. определение истинности формул). Тем самым доказано, что $M \vDash A[a / t] \rightarrow \exists x A[a / x]$\\\medskip 
-Аксиомы вида A2 рассматриваются аналогично\\
-Рассмотрим случай, когда $B$ — аксиома A1, то есть $B$ имеет вид $B_{0}\left[P_{1} / C_{1}, \ldots, P_{n} / C_{n}\right]$,где $B(P_1,\dots,P_n)$ — тавтология. Считаем $C_1,\dots,C_n$ замкнутыми формулами сигнатуры $\Sigma(M)$ и докажем $M\vDash B$.\\\medskip 
-Допустим $M\nvDash B$. Рассмотрим оценку $f$ пропозициональных переменных $P_1,\dots,P_n$ такую, что\\\medskip 
-$f\left(P_{i}\right)=\text{И} \stackrel{\text { def }}{\Longleftrightarrow} M \vDash C_{i}$\\\medskip 
-Тогда для любой пропозициональной формулы  $D(P_1,\dots,P_n)$ индукцией по построению $D$ легко доказывается эквивалентность\\
-$f(D)=\text{и} \Longleftrightarrow M \vDash D\left[P_{1} / C_{1}, \ldots, P_{n} / C_{n}\right]$\\\medskip 
-В частности, для $D=B_0$ получаем $f(B_0)=$Л поскольку $M\nvDash B$.Это противоречит предположению о том, что $B_0$ — тавтология.\\\medskip 
-Рассмотрим теперь случай, когда $B$ получена по одному из правил вывода R1–R3.\\\medskip 
-Если $A$ получена из $A$ и $A\rightarrow B$ по правилу modus ponens, мы имеем по предположению индукции $M \vDash A_{\mathbf{H}} M \vDash A \rightarrow B$ (считая $A$ и $B$ замкнутыми формулами сигнатуры $\Sigma(M)$). Тогда $M \vDash B$ в силу определения истинности для импликации.\\ \medskip 
-Допустим $B=(A \rightarrow \forall x C[a / x])$ получена из $A \rightarrow C$ по правилу R2. Считаем $B$ замкнутой формулой в сигнатуре $\Sigma(M)$. По предположению индукции $M\vDash A\rightarrow C[a/\underline{c}]$ для всех $c\in M$.Если $M\nvDash A$, то очевидно $M \vDash A \rightarrow \forall x C[a / x]$.
-Иначе $M\vDash C[a/\underline{c}]$ для всех $c\in M$ и тем самым $M \vDash \forall x C[a / x]$.\\\medskip 
-Правило R3 рассматривается аналогично
+	Индукция по длине вывода формулы $B$ в $T$. Если $B\in T$, то $M\vDash B$, поскольку $M\vDash T$.\\ 
+	Рассмотрим случай, когда $B$ -- логическая аксиома вида A3, то есть $B=(A[a / t] \rightarrow \exists x A[a /
+	x])$. Можно считать $B$ (после подстановки констант вместо свободных переменных) замкнутой формулой, а $t$ —
+	замкнутым термом сигнатуры $\Sigma(M)$.\\ 
+	Допустим $M \vDash A[a / t]$. Пусть $c \rightleftharpoons t_{M}$, тогда $M \vDash A[a / \underline{c}]$, а
+	значит и $M \vDash \exists\:x A[a/x]$ (см. определение истинности формул). Тем самым доказано, что $M \vDash
+	A[a / t] \rightarrow \exists x A[a / x]$\\ 
+	Аксиомы вида A2 рассматриваются аналогично\\
+	Рассмотрим случай, когда $B$ — аксиома A1, то есть $B$ имеет вид $B_{0}\left[P_{1} / C_{1}, \ldots, P_{n} /
+	C_{n}\right]$,где $B_0(P_1,\ldots,P_n)$ — тавтология. Считаем $C_1,\dots,C_n$ замкнутыми формулами сигнатуры
+	$\Sigma(M)$ и докажем $M\vDash B$.\\ 
+	Допустим $M\nvDash B$. Рассмотрим оценку $f$ пропозициональных переменных $P_1,\dots,P_n$ такую, что\\ 
+	$f\left(P_{i}\right)=\text{И} \stackrel{\text { def }}{\Longleftrightarrow} M \vDash C_{i}$\\ 
+	Тогда для любой пропозициональной формулы  $D(P_1,\dots,P_n)$ индукцией по построению $D$ легко доказывается
+	эквивалентность
+	$f(D)=\text{И} \Longleftrightarrow M \vDash D\left[P_{1} / C_{1}, \ldots, P_{n} / C_{n}\right]$\\ 
+	В частности, для $D=B_0$ получаем $f(B_0)=$Л поскольку $M\nvDash B$.Это противоречит предположению о том, что
+	$B_0$ — тавтология.\\ 
+	Рассмотрим теперь случай, когда $B$ получена по одному из правил вывода R1–R3.\\ 
+	Если $A$ получена из $A$ и $A\rightarrow B$ по правилу modus ponens, мы имеем по предположению индукции $M
+	\vDash A$ и $M \vDash A \rightarrow B$ (считая $A$ и $B$ замкнутыми формулами сигнатуры $\Sigma(M)$).
+	Тогда $M \vDash B$ в силу определения истинности для импликации.\\  
+	Допустим $B=(A \rightarrow \forall x C[a / x])$ получена из $A \rightarrow C$ по правилу R2. Считаем $B$
+	замкнутой формулой в сигнатуре $\Sigma(M)$. По предположению индукции $M\vDash A\rightarrow C[a/\underline{c}]$
+	для всех $c\in M$.Если $M\nvDash A$, то очевидно $M \vDash A \rightarrow \forall x C[a / x]$.
+	Иначе $M\vDash C[a/\underline{c}]$ для всех $c\in M$ и тем самым $M \vDash \forall x C[a / x]$.\\ 
+	Правило R3 рассматривается аналогично
 \end{proof}
 \begin{corollary}
-    Если $\vdash A$ то $A$ общезначима
+	Если $\vdash A$ то $A$ общезначима
 \end{corollary}
 \begin{corollary}
-    Если теория $T$ имеет модель, то $T$ непротиворечива.
+	Если теория $T$ имеет модель, то $T$ непротиворечива.
 \end{corollary}
 \begin{corollary}
-    Если существует модель $M$ теории $T$ для которой $M\nvDash A$,то $M\nvdash A$.
+	Если существует модель $M$ теории $T$ для которой $M\nvDash A$,то $M\nvdash A$.
 \end{corollary}

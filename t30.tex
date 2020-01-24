@@ -93,12 +93,12 @@ $\Sigma$ -- ленточный алфавит, $P$ -- программа, $q_{0}
 \end{example}
 \par 
 \begin{definition}
-	Пусть $f : \Sigma^* \to\ \Sigma^*$ -- частичная функция. $f$ \textbf{вычислима машиной Тьюринга} $M=(Q,
+	Пусть $f\colon\Sigma^* \to\Sigma^*$ -- частичная функция. $f$ \textbf{вычислима машиной Тьюринга} $M=(Q,
 	\Sigma_{M}, P, q_{0}, q_{1})$, если $\Sigma \subset\ \Sigma_{M}$ (то есть алфавит $\Sigma$ является
 	подалфавитом $\Sigma_{M}$),\ $\# \notin \Sigma$ ("пробела"\ нет в алфавите $\Sigma$) и $M$ переводит
 	конфигурацию $q_{1}X \mapsto q_{0}f(X)$, где $X, f(X) \in \Sigma^*$.
 \end{definition}
-\par Если $x \notin dom(f)$, то $M$ на $q_{1}X$ не остановится.
+\par Если $x \notin\dom(f)$, то $M$ на $q_{1}X$ не остановится.
 \begin{definition} $f$ \textbf{вычислима}, если существует машина Тьюринга, которая её вычисляет.
 \end{definition}
 

@@ -1,94 +1,117 @@
-\section{Элементарная теория данной модели. Подмодель, элементарная подмодель данной модели. Теорема Лёвенгейма–Сколема (для счётной сигнатуры). Cуществование счётных моделей теории множеств ZFC, элементарных теорий полей $\mathbb{R}$ и $\mathbb{C}$ и элементарной геометрии.}
+\section{Элементарная теория данной модели. Подмодель, элементарная подмодель данной модели. Теорема
+Лёвенгейма–Сколема (для счётной сигнатуры). Cуществование счётных моделей теории множеств ZFC, элементарных теорий
+полей $\mathbb{R}$ и $\mathbb{C}$ и элементарной геометрии.}
 Пусть $St_\varSigma$ -- множество предложений сигнатуры $\varSigma$
 \begin{definition}
-Элементарная теория модели $M$ есть множество $T h(M) \rightleftharpoons \left\{A \in \mathrm{St}_{\Sigma}: M \vDash A\right\}$
+	Элементарная теория модели $M$ есть множество $T h(M) \rightleftharpoons \left\{\,A \in \mathrm{St}_{\Sigma}\mid M
+	\vDash A\,\right\}$
 \end{definition}
 \begin{definition}
-    Модели $M$ и $N$ сигнатуры $\varSigma$ элементарно эквивалентны ($M\equiv N$), если в $M$ и в $N$ истинны одни и те же предложения из $\varSigma$, т.е. $Th(M) \equiv Th(N)$.
+	Модели $M$ и $N$ сигнатуры $\varSigma$ элементарно эквивалентны ($M\equiv N$), если в $M$ и в $N$ истинны одни
+	и те же предложения из $\varSigma$, т.е. $Th(M) \equiv Th(N)$.
 \end{definition}
 \begin{proposition}
-    Если $M \cong N$, то $M \equiv N$
+	Если $M \cong N$, то $M \equiv N$
 \end{proposition}
 \begin{proof} \textcolor{mygray}{
-\textbf{Sketch of the proof} \\(сереньким, потому что не было на лекциях)\\
-Естественно доказывать это утверждение по индукции. Для
-этого его надо обобщить на произвольные формулы (не только замкнутые). Вот это обобщение: пусть $\alpha: M \rightarrow N$ — изоморфизм, а $F$ — произвольная формула нашей сигнатуры. Тогда она истинна в $M$ при оценке $\pi$ тогда и только тогда, когда она истинна в $N$ при $\alpha \circ \pi$\\
-$M  \models F\left(a_{1}, \ldots, a_{n}\right) \Leftrightarrow N  \models\left(\alpha\left(a_{1}\right), \ldots, \alpha\left(a_{n}\right)\right)$ для любых элементов $a_{1}, \dots, a_{n}$ множества $M$
-После такого обобщения доказательство по индукции становится
-очевидным
-}
+		\textbf{Sketch of the proof} \\(сереньким, потому что не было на лекциях)\\
+		Естественно доказывать это утверждение по индукции. Для
+		этого его надо обобщить на произвольные формулы (не только замкнутые). Вот это обобщение: пусть $\alpha: M
+		\rightarrow N$ — изоморфизм, а $F$ — произвольная формула нашей сигнатуры. Тогда она истинна в $M$ при
+		оценке $\pi$ тогда и только тогда, когда она истинна в $N$ при $\alpha \circ \pi$\\
+		$M  \models F\left(a_{1}, \ldots, a_{n}\right) \Leftrightarrow N  \models\left(\alpha\left(a_{1}\right),
+		\ldots, \alpha\left(a_{n}\right)\right)$ для любых элементов $a_{1}, \dots, a_{n}$ множества $M$
+		После такого обобщения доказательство по индукции становится
+		очевидным
+	}
 \end{proof}
 \begin{definition}
-    $(N ; \Sigma)$  есть подмодель модели $(M ; \Sigma)$ если $N \subseteq M$ и для всех $P \in \operatorname{Pred}_{\Sigma}, f \in \mathrm{Func}_{\Sigma}, c \in \text { Const }_{\Sigma}$ $P_{N}=P_{M}\: \lceil N, c_{M} \in N, N$ замкнуто относительно $f_{M}$ и $f_{N}=f_{M}\lceil N$
+	$(N ; \Sigma)$  есть подмодель модели $(M ; \Sigma)$ если $N \subseteq M$ и для всех $P \in
+	\operatorname{Pred}_{\Sigma}, f \in \mathrm{Func}_{\Sigma}, c \in \text { Const }_{\Sigma}$ $P_{N}=P_{M}\:
+	\lceil N, c_{M} \in N, N$ замкнуто относительно $f_{M}$ и $f_{N}=f_{M}\lceil N$
 \end{definition}
 \begin{example}
-Если $\left(G ;=, \cdot, 1,(\cdot)^{-1}\right)$ — группа, то  подмодели $G$ суть подгруппы группы $G$. Если же $G$  рассматривается как модель $(G ;=, \cdot, 1)$, то её подмоделями будут подполугруппы с единицей группы $G$.
+	Если $\left(G ;=, \cdot, 1,(\cdot)^{-1}\right)$ — группа, то  подмодели $G$ суть подгруппы группы $G$. Если же
+	$G$  рассматривается как модель $(G ;=, \cdot, 1)$, то её подмоделями будут подполугруппы с единицей группы
+	$G$.
 \end{example}
 \begin{definition}
-    Подмодель $(N ;\Sigma)$ модели $(M ;\Sigma)$ элементарна, (обозначение $N \preccurlyeq M$) если для всех $A \in \mathrm{Fm}_{\Sigma}$ $\forall \vec{x} \in N(N \vDash A[\vec{x}] \Longleftrightarrow M \vDash A[\vec{x}])$
+	Подмодель $(N ;\Sigma)$ модели $(M ;\Sigma)$ элементарна, (обозначение $N \preccurlyeq M$) если для всех $A \in
+	\mathrm{Fm}_{\Sigma}$ $\forall \vec{x} \in N(N \vDash A[\vec{x}] \Longleftrightarrow M \vDash A[\vec{x}])$
 \end{definition}
 \begin{proposition}
-    $N \preccurlyeq M$ влечет $N \equiv M$.
+	$N \preccurlyeq M$ влечет $N \equiv M$.
 \end{proposition}
 \begin{example}
-Если M — модель $Th(\mathbb{N})$,то $\mathbb{N}$ изоморфна некоторой элементарной подмодели  $N \preccurlyeq M$.
+	Если M — модель $Th(\mathbb{N})$,то $\mathbb{N}$ изоморфна некоторой элементарной подмодели  $N \preccurlyeq M$.
 \end{example}
 \begin{proof}
-    Вложение $\varphi: \mathbb{N} \rightarrow M$ действует по формуле $\varphi(n) \rightleftharpoons(\bar{n})_{M}$.
-    Докажем, что $N \rightleftharpoons \varphi(\mathbb{N})$
-    есть подмодель $M$
-    \\Ясно, что подмножество $\varphi(\mathbb{N}) \subseteq M$ замкнуто относительно функции $S_M$ и $S_{M}(\varphi(n))=\varphi\left(S_{\mathrm{N}}(n)\right)$.Рассмотрим теперь функцию сложения $+$  Надо установить, что $\phi(\mathbb{N})$ замкнуто относительно $+_M$ и 
-    \\$\varphi(n)+_{M} \varphi(m)=\varphi(n+m)$\\
-    Это вытекает из равенства $\bar{n}+\bar{m}=\overline{n+m}$, которое является истинным в $\mathbb{N}$
-    и потому входит в $Th(\mathbb{N})$ . Функция умножения рассматривается аналогично.
-    Таким образом,$\varphi: \mathbb{N} \rightarrow N$  — изоморфизм.\\
-    Элементарность вложения следует из цепочки эквивалентностей, верной для любых $n_{1}, \dots, n_{k} \in \mathbb{N}$:\\
-    $N \vDash A\left[\varphi\left(n_{1}\right), \ldots, \varphi\left(n_{k}\right)\right] \Longleftrightarrow \mathbb{N} \vDash A\left[n_{1}, \ldots, n_{k}\right] \Longleftrightarrow \mathbb{N} \vDash A(\overline{n_{1}}, \ldots, \overline{n_{k}})\Longleftrightarrow M \vDash A(\overline{n_{1}}, \ldots, \overline{n_{k}}) \Longleftrightarrow M \vDash A\left[\varphi\left(n_{1}\right), \ldots, \varphi\left(n_{k}\right)\right]$\\
-    Третья эквивалентность следует из $M \vDash T h(\mathbb{N})$
+	Вложение $\varphi: \mathbb{N} \rightarrow M$ действует по формуле $\varphi(n) \rightleftharpoons(\bar{n})_{M}$.
+	Докажем, что $N \rightleftharpoons \varphi(\mathbb{N})$
+	есть подмодель $M$. Ясно, что подмножество $\varphi(\mathbb{N}) \subseteq M$ замкнуто относительно функции $S_M$ и
+	$S_{M}(\varphi(n))=\varphi\left(S_{\mathrm{N}}(n)\right)$. Рассмотрим теперь функцию сложения $+$. Надо
+	установить, что $\phi(\mathbb{N})$ замкнуто относительно $+_M$ и 
+	\\$\varphi(n)+_{M} \varphi(m)=\varphi(n+m)$\\
+	Это вытекает из равенства $\bar{n}+\bar{m}=\overline{n+m}$, которое является истинным в $\mathbb{N}$
+	и потому входит в $Th(\mathbb{N})$ . Функция умножения рассматривается аналогично.
+	Таким образом,$\varphi: \mathbb{N} \rightarrow N$  — изоморфизм.\\
+	Элементарность вложения следует из цепочки эквивалентностей, верной для любых $n_{1}, \dots, n_{k} \in
+	\mathbb{N}$:\\
+	$N \vDash A\left[\varphi\left(n_{1}\right), \ldots, \varphi\left(n_{k}\right)\right] \Longleftrightarrow
+	\mathbb{N} \vDash A\left[n_{1}, \ldots, n_{k}\right] \Longleftrightarrow \mathbb{N} \vDash A(\overline{n_{1}},
+	\ldots, \overline{n_{k}})\Longleftrightarrow M \vDash A(\overline{n_{1}}, \ldots, \overline{n_{k}})
+	\Longleftrightarrow M \vDash A\left[\varphi\left(n_{1}\right), \ldots, \varphi\left(n_{k}\right)\right]$\\
+	Третья эквивалентность следует из $M \vDash T h(\mathbb{N})$
 \end{proof}
 Пусть $\Sigma$ - счётная сигнатура\\
 \begin{theorem}
-    Всякая модель  $(N ;\Sigma)$ имеет (конечную или) счётную элементарную подмодель.
+	Всякая модель  $(N ;\Sigma)$ имеет (конечную или) счётную элементарную подмодель.
 \end{theorem}
 \begin{proof}
-    Построим последовательность счётных подмножеств модели $M$\\
-    $N_{0} \subseteq N_{1} \subseteq N_{2} \subseteq \ldots$\\
-    следующим образом:\\
-    1)$N_0$— любое непустое счётное подмножество $M$\\
-    2)Для каждой формулы $A[a, \vec{b}]$ и набора $\vec{y} \in N_{k}$,если $M \vDash \exists v A[v, \vec{y}]$, выберем $x \in M$
-    такой, что $M \vDash A[x, \vec{y}]$. Добавим все такие x к $N_k$ и получим $N_{k+1}$ .\\
-    Положим $N \rightleftharpoons \bigcup_{k \geq 0} N_{k}$.По построению множества $N$ получаем следующее
-    свойство.
-    \begin{lemma}
-        Для любой формулы $a$ и всех $\vec{y} \in N$\\
-        $M \vDash \exists v A[v, \vec{y}] \Longleftrightarrow \exists x \in N \quad M \vDash A[x, \vec{y}]$
-    \end{lemma}
-    \begin{lemma}
-        $N$ есть подмодель $M$
-    \end{lemma}
-    \begin{proof}
-        Пусть $\vec{x} \in N,\:f\in Func_\Sigma$ Поскольку $M \vDash \exists v \: f(\vec{x})=v$, имеем $y\in N$ такой, что $M \vDash f(\vec{x})=y$, т.е. $f_M(\vec{x})\in N$
-    \end{proof}
-    Индукцией по построению $A$ теперь покажем\\
-    $\forall \: \vec{y}\in N (N \vDash A[\vec{y}] \Longleftrightarrow M \vDash A[\vec{y}])$\\
-    1)Для атомарных формул $A$ следует из того, что $N$ — подмодель $M$\\
-    \textcolor{mygray}{Если $P\in Pred_\Sigma$ валентности n и $t1, . . . ,tn$ —
-    термы, то $P(t1, . . . ,tn)$ есть формула,называемая атомарной формулой}\\
-    2)Для $A=\neg B, B \wedge C, B \vee C$ вытекает из предположения индукции.\\
-    3) Допустим $A=\exists v B[a / v]$. Тогда\\
-    $M \vDash \exists v B[a / v, \vec{y}] \Longleftrightarrow \exists x \in N \quad M \vDash B[x, \vec{y}]\Longleftrightarrow \exists x \in N \quad N \vDash B[x, \vec{y}] \Longleftrightarrow N \vDash \exists v B[a / v, \vec{y}]$
+	Построим последовательность счётных подмножеств модели $M$\\
+	$N_{0} \subseteq N_{1} \subseteq N_{2} \subseteq \ldots$\\
+	следующим образом:\\
+	1)$N_0$— любое непустое счётное подмножество $M$\\
+	2)Для каждой формулы $A[a, \vec{b}]$ и набора $\vec{y} \in N_{k}$,если $M \vDash \exists v A[v, \vec{y}]$,
+	выберем $x \in M$
+	такой, что $M \vDash A[x, \vec{y}]$. Добавим все такие x к $N_k$ и получим $N_{k+1}$ .\\
+	Положим $N \rightleftharpoons \bigcup_{k \geq 0} N_{k}$.По построению множества $N$ получаем следующее
+	свойство.
+	\begin{lemma}
+		Для любой формулы $a$ и всех $\vec{y} \in N$\\
+		$M \vDash \exists v A[v, \vec{y}] \Longleftrightarrow \exists x \in N \quad M \vDash A[x, \vec{y}]$
+	\end{lemma}
+	\begin{lemma}
+		$N$ есть подмодель $M$
+	\end{lemma}
+	\begin{proof}
+		Пусть $\vec{x} \in N,\:f\in Func_\Sigma$ Поскольку $M \vDash \exists v \: f(\vec{x})=v$, имеем $y\in N$
+		такой, что $M \vDash f(\vec{x})=y$, т.е. $f_M(\vec{x})\in N$
+	\end{proof}
+	Индукцией по построению $A$ теперь покажем\\
+	$\forall \: \vec{y}\in N (N \vDash A[\vec{y}] \Longleftrightarrow M \vDash A[\vec{y}])$\\
+	1)Для атомарных формул $A$ следует из того, что $N$ — подмодель $M$\\
+	\textcolor{mygray}{Если $P\in Pred_\Sigma$ валентности n и $t1, . . . ,tn$ —
+	термы, то $P(t1, . . . ,tn)$ есть формула,называемая атомарной формулой}\\
+	2)Для $A=\neg B, B \wedge C, B \vee C$ вытекает из предположения индукции.\\
+	3) Допустим $A=\exists v B[a / v]$. Тогда\\
+	$M \vDash \exists v B[a / v, \vec{y}] \Longleftrightarrow \exists x \in N \quad M \vDash B[x,
+	\vec{y}]\Longleftrightarrow \exists x \in N \quad N \vDash B[x, \vec{y}] \Longleftrightarrow N \vDash \exists v
+	B[a / v, \vec{y}]$
 \end{proof}
 \begin{corollary}
-    Всякая непротиворечивая теория в счётной сигнатуре имеет (конечную или) счётную модель.\\
-    1)Существуют счётные модели $Th(\mathbb{R})$ и $Th(\mathbb{C})$\\
-    2)Существует счётная модель элементарной геометрии\\
-    3)Если теория множеств $ZFC$ непротиворечива, то существует\\ и счётная модель $ZFC$.\\ \textcolor{mygray}{Система аксиом Цермело — Френкеля,см билет}
+	Всякая непротиворечивая теория в счётной сигнатуре имеет (конечную или) счётную модель.\\
+	1)Существуют счётные модели $Th(\mathbb{R})$ и $Th(\mathbb{C})$\\
+	2)Существует счётная модель элементарной геометрии\\
+	3)Если теория множеств $ZFC$ непротиворечива, то существует\\ и счётная модель $ZFC$.\\
+	\textcolor{mygray}{Система аксиом Цермело — Френкеля,см билет}
 \end{corollary}
 \begin{theorem}\textbf{Теорема Лёвенгейма–Сколема (для счётной сигнатуры)}
-     Пусть $(M ;\Sigma)$— бесконечная модель в счётной сигнатуре и $\alpha \leq |M|$
-    — бесконечная мощность. Тогда найдётся подмодель $N \preceq M$ такая,что $|N|=\alpha$.
+	Пусть $(M ;\Sigma)$— бесконечная модель в счётной сигнатуре и $\alpha \leq |M|$
+	— бесконечная мощность. Тогда найдётся подмодель $N \preceq M$ такая,что $|N|=\alpha$.
 \end{theorem}
 \begin{proof}
-    Та же конструкция, но начинаем с любого подмножества $N_0\subseteq M$
-    мощности $\alpha$ . Поскольку сигнатура счётна, нетрудно показать по индукции, что все множеств $N_K$,так же как и их объединение $N$,имеют мощность $\alpha$ 
+	Та же конструкция, но начинаем с любого подмножества $N_0\subseteq M$
+	мощности $\alpha$ . Поскольку сигнатура счётна, нетрудно показать по индукции, что все множеств $N_K$,так же
+	как и их объединение $N$,имеют мощность $\alpha$ 
 \end{proof}
