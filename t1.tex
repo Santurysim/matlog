@@ -16,28 +16,28 @@
 
 \begin{enumerate}
 
-	\item{\textbf{Аксиома равенства}: Равные множества $x$ и $y$ являются элементами одних и тех же множеств.
+	\item \textbf{Аксиома равенства}: Равные множества $x$ и $y$ являются элементами одних и тех же множеств.
 
-		$$ x = y \rightarrow \forall z ( x \in z \leftrightarrow y \in z ) $$}
+		$$ x = y \rightarrow \forall z ( x \in z \leftrightarrow y \in z ) $$ 
 
-	\item{\textbf{Аксиома пары}: Для любых $x$ и $y$ найдется множество $ z = {x, y}$, элементами которого являются в
+	\item \textbf{Аксиома пары}: Для любых $x$ и $y$ найдется множество $ z = {x, y}$, элементами которого являются в
 		точности $x$ и $y$.
 
-		$$ \forall x, y \exists z : \forall u (u \in z \leftrightarrow ( u = x \lor u = y)) $$}
+		$$ \forall x, y \exists z : \forall u (u \in z \leftrightarrow ( u = x \lor u = y)) $$ 
 
-	\item{\textbf{Аксиома объединения}: Для любого множества $X$ существует множество $Y = \bigcup X$, содержащее в
+	\item \textbf{Аксиома объединения}: Для любого множества $X$ существует множество $Y = \bigcup X$, содержащее в
 		точности те элементы, которые принадлежат хотя бы одному из элементов множества $X$.
 
-		$$ \forall x \exists y: \forall u ( u \in y \leftrightarrow \exists z (u \in z \land z \in x)) $$}
+		$$ \forall x \exists y: \forall u ( u \in y \leftrightarrow \exists z (u \in z \land z \in x)) $$ 
 
-	\item{\textbf{Аксиома степени}: Для любого $X$ существует множество $ Y = \mathcal{P} (X)$ всех подмножеств $X$.
+	\item \textbf{Аксиома степени}: Для любого $X$ существует множество $ Y = \mathcal{P} (X)$ всех подмножеств $X$.
 
-		$$ \forall x \exists y : \forall z ( z \in y \leftrightarrow z \in x) $$}
+		$$ \forall x \exists y : \forall z ( z \in y \leftrightarrow z \in x) $$ 
 
-	\item{\textbf{Схема аксиом выделения}: Для любого свойства $\varphi (x)$ и множества $X$ найдется множество $Y = \{x
+	\item \textbf{Схема аксиом выделения}: Для любого свойства $\varphi (x)$ и множества $X$ найдется множество $Y = \{x
 		\in X: \varphi (x)\}$, содержащее те и только те элементы $x \in X$, которые удовлетворяют свойству $\varphi$.
 
-		$$ \forall x \exists y: \forall u ( u \in y \leftrightarrow (u \in x \land \varphi (u))) $$}
+		$$ \forall x \exists y: \forall u ( u \in y \leftrightarrow (u \in x \land \varphi (u))) $$ 
 
 \end{enumerate}
 
@@ -75,7 +75,7 @@ y\}, \{x\}\}$
 
 \begin{definition}Множество всех классов эквивалентности $A$ по отношению $R$ называется \textbf{фактормножеством} и
 	обозначается $A / R$:
-	$$ A \ R = \{ x_R : x \in A \} $$
+	$$ A \ R = \{\,x_R\mid x \in A \,\} $$
 \end{definition}
 
 \subsection{Функции}
@@ -93,6 +93,6 @@ y\}, \{x\}\}$
 			x_1 = x_2)$.
 	\end{itemize}
 	\textbf{Функцией} $f$ из $A$ в $B$ называется тотальное и функциональное бинарное отношение между $A$ и $B$
-	(обозначение $f : A \rightarrow B$). Слово \textbf{отображение} есть синоним слова функция. Если $f$ -- функция, то
-	мы пишем $f (x) = y$ вместо $\langle x, y \rangle \in f$.
+	(обозначение $f\colon A \to B$). Слово \textbf{отображение} есть синоним слова функция. Если $f$ -- функция, то
+	мы пишем $f(x) = y$ вместо $\langle x, y \rangle \in f$.
 \end{definition}
