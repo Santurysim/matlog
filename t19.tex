@@ -1,5 +1,7 @@
-\section{Равносильность формул языка первого порядка, важнейшие равносильности. Переименование связанных
-переменных. Приведение формулы языка первого порядка к предварённой форм}
+\section[Равносильности формул языка первого порядка, важнейшие равносильности. Переименовывание связанных
+переменных. Предварённая форма формулы.]{\sloppy Равносильность формул языка первого порядка, важнейшие
+равносильности. Переименование связанных переменных. Приведение формулы языка первого порядка к предварённой
+форме.}
 \begin{definition}
 	Формулы $A$ и $B$ сигнатуры $\Sigma$ \textbf{равносильны} (обозначение $A\equiv B$), если для любой модели
 	$(M,\Sigma)$ и оценки $f$ на $M$
@@ -43,7 +45,8 @@
     \end{aligned}$
      \end{center}
 	 Аналогично обосновываются остальные равносильности, входящие в следующую таблицу (где предполагается, что
-	 переменные $x, \ y$ не входят в формулы $A$, $B$).\\
+	 переменные $x,y$ не входят в формулы $A, B$).
+
 $$
 \begin{array}{|ccc|ccc|}
 \hline \forall x A[a / x] & {\equiv} & {\forall y A[a / y]} & {\exists x A[a / x]} & {\equiv} & {\exists y A[a / y]} \\
@@ -80,26 +83,34 @@ $$
 	2)Если $A\equiv B$ и $x \in BdVar$ не входит в $A,B$, то $\forall x A[a / x] \equiv \forall x B[a / x]$ и
 	$\exists x A[a / x] \equiv \exists x B[a / x]$
 \end{lemma}
-\begin{theorem}
-	\textbf{(замена подформулы на эквивалентную} Если $A \equiv B$ и разрешена подстановка формул $A,B$ вместо $P$
-	в $C$ то $C[P/A]\equiv C[P/B]\\$
-    доказательство тут \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf} стр.31-32.
+\begin{theorem}[Замена формулы на эквивалентную]
+	Если $A \equiv B$ и разрешена подстановка формул $A,B$ вместо $P$ в $C$, то $C[P/A]\equiv C[P/B]$.
 \end{theorem}
+\begin{proof}
+	\href{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf}{Лекции Л.Д. Беклемишева}, с.~31--32.
+\end{proof}
 \begin{lemma}
-    Пусть $y\in BdVar$ не входит в формулу $B$. Тогда $B[x/y]$ есть формула и $B[x/y] \equiv B$ \\
-    д-во стр.32 \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf} 
+    Пусть $y\in BdVar$ не входит в формулу $B$. Тогда $B[x/y]$ есть формула и $B[x/y] \equiv B$
 \end{lemma}
+\begin{proof}
+	\href{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf}{Лекции Л.Д. Беклемишева}, с.~32
+\end{proof}
 \begin{theorem}
 	Пусть формула $A$ общезначима и разрешена подстановка формулы $C$ вместо $P$ в $A$, тогда общезначима формула
 	$A[P/C]$.
-     д-во стр.32 \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf} 
 \end{theorem}
+\begin{proof}
+	\href{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf}{Лекции Л.Д. Беклемишева}, с.~32
+\end{proof}
 \begin{definition}
 	Формула $A$ называется \textbf{предварённой}, если $A$ имеет вид $$\mathrm{Q} x_{1} \mathrm{Q} x_{2} \ldots
 	\mathrm{Q} x_{n} A_{0}\left[b_{1} / x_{1}, \ldots, b_{n} / x_{n}\right],$$где $Q$ означает квантор $\forall$ или
 	$\exists$, а формула $A_0$ бескванторная.
 \end{definition}
-Далее тут доказательства см. стр.33 \url{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf}
+Далее тут доказательства см. стр.33
+\begin{center}
+	\href{http://lpcs.math.msu.su/vml2019/2019_VML_Beklemishev_2_Logic.pdf}{Лекции Л.Д. Беклемишева}
+\end{center}
 \begin{theorem}
     Для любых $\alpha,\beta$ и любых формул $A,B$, не содержащих переменных из $\alpha,\beta$ имеем:\\
     1)$\alpha A \wedge B \equiv \alpha(A \wedge B) ; \alpha A \vee B \equiv \alpha(A \vee B)$\\

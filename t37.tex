@@ -26,13 +26,13 @@
 	Тьюринга U, является главной.
 \end{theorem}
 \begin{proof}
-	Пусть $\bigtriangleup = \{1\}$ и МТ M вычисляет $g(e,x)$ в унарной записи, то есть $M_\bigtriangleup
-	(\overline{\langle e,x \rangle}) \simeq \overline{g(e,x)}$. Сопоставим МТ M машину $M[n]$, которая для данного
-	входа x вычисляет $\overline{\langle n,x \rangle}$, а далее работает как M. Преобразование $n \mapsto
-	Code(M[n])$ ($Code()$ - код соответствующей команды) является тотальной вычислимой функцией.
-	Имеем $M_\bigtriangleup (\overline{\langle e,x \rangle}) \simeq M[e]_\bigtriangleup (\overline{x}) \simeq
-	U_\bigtriangleup (Code(M[e]) \$ \overline{x}) $. Вспомним, что $F(i,n) \rightleftharpoons \mid U_\bigtriangleup
-	(word_{\Pi} (i) \$ \overline{n}) \mid $. Отсюда $g(e,x) \simeq F(s(e),x)$, где $s(e) = word_{\Pi}^{-1}
-	(Code(M[e])) $.
+	Пусть $\bigtriangleup = \{1\}$ и Машина Тьюринга $M$ вычисляет $g(e,x)$ в унарной записи, то есть
+	$M_\bigtriangleup (\overline{\langle e,x \rangle}) \simeq \overline{g(e,x)}$. Сопоставим Машине Тьюринга $M$
+	машину $M[n]$, которая для данного входа x вычисляет $\overline{\langle n,x \rangle}$, а далее работает как M.
+	Преобразование $n\mapsto\mathrm{Code}(M[n])$ ($\mathrm{Code}()$ - код соответствующей команды) является
+	тотальной вычислимой функцией. Имеем $M_\bigtriangleup (\overline{\langle e,x \rangle}) \simeq
+	M[e]_\bigtriangleup (\overline{x}) \simeq U_\bigtriangleup (\mathrm{Code}(M[e]) \$ \overline{x}) $. Вспомним,
+	что $F(i,n) = |U_\bigtriangleup (\mathrm{word}_{\Pi} (i) \$ \overline{n})|$. Отсюда $g(e,x) \simeq F(s(e),x)$,
+	где $s(e) = \mathrm{word}_{\Pi}^{-1} (Code(M[e])) $.
 
 \end{proof}

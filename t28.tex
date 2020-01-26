@@ -1,21 +1,21 @@
 \section{Бесконечная модель счётной сигнатуры имеет элементарное расширение
-любой большей мощности.(Теорема Мальцева о повышении мощности)}
+любой большей мощности. (Теорема Мальцева о повышении мощности)}
 \begin{theorem} 
 	Для любой бесконечной модели $(M ;\Sigma)$, где $\Sigma$ -- счетная сигнатура с равенством, и мощности $\lambda
 	\ge |M|$ найдётся модель $(N ;\Sigma)$ такая, что $M \preccurlyeq N$ и $|N|=\lambda$
 \end{theorem}
 \begin{proof}
 	Возьмем $ X \supseteq M,\:|X|=\lambda$.Рассмотрим сигнатуру $\Sigma_X \Longleftrightarrow \Sigma
-	\cup\{\underline{c}: c \in X\}$ и теорию \\ $T:=Th\left(M ; \Sigma_{X}\right) \cup\{\underline{c} \neq
-	\underline{d}: c, d \in X, c \neq d\}$\\
-	Каждая конечное подмножество теории $T$ совместно. По теореме о компактности $T$ имеет нормальную модель $N$.
-	Но функция $\varphi\colon c \mapsto(\underline{c})_{N}$ инъективна в силу аксиом $T$, следовательно $|N|\ge
-	|M|=\lambda$. Т.к. $N\vDash Th(M;\Sigma_X)$, то $\varphi(M)$ есть подмодель $N$ изоморфная $M$ и $\varphi(M)
-	\preccurlyeq N$. Это рассуждение совершенно аналогично уже разобранному более детально примеру из билета 27.\\
-	Если $|N|=\lambda$, то теорема доказана. Если $|N|>\lambda$, воспользуемся конструкцией из последней теоремы
-	билета 27 и построим модель $N_1$ такую, что $M \subseteq N_{1} \preccurlyeq N$ и
-	$\left|N_{1}\right|=\lambda$\\
-	Тогда $N_1$- требуемая модель, поскольку для любой формулы $A$\\
+	\cup\{\underline{c}: c \in X\}$ и теорию $T:=\mathrm{Th}\left(M;\Sigma_{X}\right) \cup\{\underline{c} \neq
+	\underline{d}: c, d \in X, c \neq d\}$. Каждая конечное подмножество теории $T$ совместно. По теореме о
+	компактности $T$ имеет нормальную модель $N$. Но функция $\varphi\colon c \mapsto(\underline{c})_{N}$
+	инъективна в силу аксиом $T$, следовательно $|N|\ge |M|=\lambda$. Т.к. $N\vDash Th(M;\Sigma_X)$, то
+	$\varphi(M)$ есть подмодель $N$ изоморфная $M$ и $\varphi(M)\preccurlyeq N$. Это рассуждение совершенно
+	аналогично уже разобранному более детально примеру из билета 27.
+
+	Если $|N|=\lambda$, то теорема доказана. Если $|N|>\lambda$, воспользуемся конструкцией из теоремы
+	Лёвенгейма-Сколема и построим модель $N_1$ такую, что $M \subseteq N_{1} \preccurlyeq N$ и
+	$\left|N_{1}\right|=\lambda$. Тогда $N_1$- требуемая модель, поскольку для любой формулы $A$
 	$$\forall \vec{x} \in M\left(N_{1} \vDash A[\vec{x}] \Longleftrightarrow N \vDash A[\vec{x}]
 	\Longleftrightarrow M \vDash A[\vec{x}]\right),$$ то есть $M \preccurlyeq N_1$.
 \end{proof}

@@ -25,7 +25,7 @@
 	Пусть $T$ -- теория с равенством. Если $T$ выполнима, то $T$ имеет нормальную модель.
 \end{theorem}
 \begin{proof}
-	Пусть $M \vDash T$. Предикат $=_M$ есть отношение эквивалентности на $M$.Положим $M'\rightleftharpoons M/_{=M}$
+	Пусть $M \vDash T$. Предикат $=_M$ есть отношение эквивалентности на $M$. Положим $M'=M/_{=_M}$
 	-- множество классов эквивалентности и пусть $\varphi\colon M\to M'$сопоставляет любому $x\in M$ его класс
 	эквивалентности $\varphi(x)\in M'$.Все функции и предикаты сигнатуры $\Sigma$ естественным образом переносятся с
 	$M$ на $M'$. Полагаем
@@ -57,8 +57,10 @@
 \end{example}
 \begin{example}
 	$(M;=;\cdot;1)$ есть группа, если $M$ есть модель следующей теории (при условии что <<=>> в $M$ понимается как
-	равенство):\\
-	1) $\forall x,y,z: x\cdot(y\cdot z)=(x\cdot y)\cdot z$\\
-	2) $\forall x \ (1 \cdot x=x \wedge x \cdot 1=x)$\\
-	3) $\forall x \ \exists y \ (x \cdot y=1 \wedge y \cdot x=1)$\\
+	равенство):
+	\begin{enumerate}
+		\item $\forall x,y,z: x\cdot(y\cdot z)=(x\cdot y)\cdot z$
+		\item $\forall x \ (1 \cdot x=x \wedge x \cdot 1=x)$
+		\item $\forall x \ \exists y \ (x \cdot y=1 \wedge y \cdot x=1)$
+	\end{enumerate}
 \end{example}

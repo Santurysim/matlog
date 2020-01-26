@@ -8,3 +8,5 @@ pdf: mps *.tex
 
 clean:
 	rm -rf *.aux *.log *.toc *.out *.mps
+
+.PHONY: all clean

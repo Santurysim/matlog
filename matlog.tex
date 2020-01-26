@@ -16,9 +16,11 @@
 \textwidth=505pt
 \textheight=750pt
 \oddsidemargin=20pt
-\hoffset=-1.5cm
+\hoffset=-1.7cm
 \topmargin=-25mm
 
+\newtheoremstyle{customtheorem}{3pt}{3pt}{}{}{\bfseries}{.}{ }{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+%\theoremstyle{customtheorem}
 \newtheorem{theorem}{Теорема}[section]
 \newtheorem{lemma}{Лемма}[section]
 \newtheorem{proposition}{Предложение}[section]
@@ -45,6 +47,7 @@
 \author{Люди}
 
 \righthyphenmin=2
+\hfuzz=0.5pt
 
 \begin{document}
 \hypersetup{pageanchor=false}

@@ -1,10 +1,12 @@
-\section{Элементарная теория данной модели. Подмодель, элементарная подмодель данной модели. Теорема
-Лёвенгейма–Сколема (для счётной сигнатуры). Cуществование счётных моделей теории множеств ZFC, элементарных теорий
-полей $\mathbb{R}$ и $\mathbb{C}$ и элементарной геометрии.}
-Пусть $St_\varSigma$ -- множество предложений сигнатуры $\varSigma$
+\section{\texorpdfstring{Элементарная теория данной модели. Подмодель, элементарная подмодель данной модели.
+Теорема Лёвенгейма–Сколема (для счётной сигнатуры). Cуществование счётных моделей теории множеств ZFC, элементарных
+теорий полей $\mathbb{R}$ и $\mathbb{C}$ и элементарной геометрии.}{Элементарная теория модели. Подмодель,
+элементарная подмодель. Теорема Левенгейма-Сколема. Существование счётных моделей ZFC, элементарных теорий полей
+действительных и комплексных чисел и элементарной геометрии}}
+Пусть $\mathrm{St}_\varSigma$ -- множество предложений сигнатуры $\varSigma$
 \begin{definition}
-	Элементарная теория модели $M$ есть множество $T h(M) \rightleftharpoons \left\{\,A \in \mathrm{St}_{\Sigma}\mid M
-	\vDash A\,\right\}$
+	Элементарная теория модели $M$ есть множество $$\mathrm{Th}(M) = \left\{\,A \in \mathrm{St}_{\Sigma}\mid M
+	\vDash A\,\right\}$$
 \end{definition}
 \begin{definition}
 	Модели $M$ и $N$ сигнатуры $\varSigma$ элементарно эквивалентны ($M\equiv N$), если в $M$ и в $N$ истинны одни
@@ -46,7 +48,7 @@
 	Если M — модель $Th(\mathbb{N})$,то $\mathbb{N}$ изоморфна некоторой элементарной подмодели  $N \preccurlyeq M$.
 \end{example}
 \begin{proof}
-	Вложение $\varphi: \mathbb{N} \rightarrow M$ действует по формуле $\varphi(n) \rightleftharpoons(\bar{n})_{M}$.
+	Вложение $\varphi: \mathbb{N} \rightarrow M$ действует по формуле $\varphi(n)=(\bar{n})_{M}$.
 	Докажем, что $N \rightleftharpoons \varphi(\mathbb{N})$
 	есть подмодель $M$. Ясно, что подмножество $\varphi(\mathbb{N}) \subseteq M$ замкнуто относительно функции $S_M$ и
 	$S_{M}(\varphi(n))=\varphi\left(S_{\mathrm{N}}(n)\right)$. Рассмотрим теперь функцию сложения $+$. Надо
@@ -54,16 +56,19 @@
 	\\$\varphi(n)+_{M} \varphi(m)=\varphi(n+m)$\\
 	Это вытекает из равенства $\bar{n}+\bar{m}=\overline{n+m}$, которое является истинным в $\mathbb{N}$
 	и потому входит в $Th(\mathbb{N})$ . Функция умножения рассматривается аналогично.
-	Таким образом,$\varphi: \mathbb{N} \rightarrow N$  — изоморфизм.\\
-	Элементарность вложения следует из цепочки эквивалентностей, верной для любых $n_{1}, \dots, n_{k} \in
-	\mathbb{N}$:\\
-	$N \vDash A\left[\varphi\left(n_{1}\right), \ldots, \varphi\left(n_{k}\right)\right] \Longleftrightarrow
-	\mathbb{N} \vDash A\left[n_{1}, \ldots, n_{k}\right] \Longleftrightarrow \mathbb{N} \vDash A(\overline{n_{1}},
-	\ldots, \overline{n_{k}})\Longleftrightarrow M \vDash A(\overline{n_{1}}, \ldots, \overline{n_{k}})
-	\Longleftrightarrow M \vDash A\left[\varphi\left(n_{1}\right), \ldots, \varphi\left(n_{k}\right)\right]$\\
+	Таким образом,$\varphi\colon\mathbb{N}\to N$  — изоморфизм.
+
+	Элементарность вложения следует из цепочки эквивалентностей, верной для любого набора $n_{1},\ldots,n_{k} \in
+	\mathbb{N}$:
+
+	$N\vDash A\left[\varphi\left(n_1\right),\ldots,\varphi\left(n_k\right)\right]\Leftrightarrow
+	\mathbb{N}\vDash A\left[n_1,\ldots,n_k\right] \Leftrightarrow\mathbb{N}\vDash A(\overline{n_1},
+	\ldots,\overline{n_k})\Leftrightarrow M\vDash A(\overline{n_1},\ldots,\overline{n_{k}})
+	\Leftrightarrow M \vDash A\left[\varphi\left(n_{1}\right), \ldots, \varphi\left(n_{k}\right)\right]$
+
 	Третья эквивалентность следует из $M \vDash T h(\mathbb{N})$
 \end{proof}
-Пусть $\Sigma$ - счётная сигнатура\\
+Пусть $\Sigma$ - счётная сигнатура
 \begin{theorem}
 	Всякая модель  $(N ;\Sigma)$ имеет (конечную или) счётную элементарную подмодель.
 \end{theorem}
@@ -106,7 +111,7 @@
 	3)Если теория множеств $ZFC$ непротиворечива, то существует\\ и счётная модель $ZFC$.\\
 	\textcolor{mygray}{Система аксиом Цермело — Френкеля,см билет}
 \end{corollary}
-\begin{theorem}\textbf{Теорема Лёвенгейма–Сколема (для счётной сигнатуры)}
+\begin{theorem}[Теорема Лёвенгейма–Сколема (для счётной сигнатуры)]
 	Пусть $(M ;\Sigma)$— бесконечная модель в счётной сигнатуре и $\alpha \leq |M|$
 	— бесконечная мощность. Тогда найдётся подмодель $N \preceq M$ такая,что $|N|=\alpha$.
 \end{theorem}
